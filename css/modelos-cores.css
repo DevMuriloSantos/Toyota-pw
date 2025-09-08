@@ -1,0 +1,19 @@
+.btn-cores {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 10px;
+}
+
+.Prata-Lua-Nova {
+    background-color: #C3CBD0;
+}
+
+.Preto-Infinito {
+    background-color: #282E30;
+}
+
+.Branco-Lunar {
+    background-color: #F2F2F0;
+}

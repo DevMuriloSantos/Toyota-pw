@@ -1,21 +1,37 @@
-const input = document.getElementById("msg");
-    const button = document.getElementById("send");
-    const chat = document.getElementById("chat");
+const categoryLinks = document.querySelectorAll('.category a');
 
-    button.addEventListener("click", async () => {
-      const message = input.value;
-      if (!message) return;
+const carro_passeio_links = document.querySelectorAll(".pt1");
+const suvs_links = document.querySelectorAll(".pt2");
 
-      chat.innerHTML += `<p><b>Você:</b> ${message}</p>`;
+const travelingcar = document.getElementById("carro-passeio");
+const suv = document.getElementById("suv");
 
-      // Chama o backend
-      const res = await fetch("http://localhost:3000/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+carro_passeio_links.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
 
-      const data = await res.json();
-      chat.innerHTML += `<p><b>GPT:</b> ${data.reply}</p>`;
-      input.value = "";
+    categoryLinks.forEach(link => {
+      link.style.border = 'none';
     });
+
+    link.style.borderBottom = '3px solid red';
+
+    travelingcar.style.display = "block";
+    suv.style.display = "none";
+  });
+});
+
+suvs_links.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    categoryLinks.forEach(link => {
+      link.style.border = 'none';
+    });
+
+    link.style.borderBottom = '3px solid red';
+
+    suv.style.display = "block";
+    travelingcar.style.display = "none";
+  });
+});
