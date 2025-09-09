@@ -6,6 +6,7 @@
     margin-right: 10px;
 }
 
+/*Seção de cores do corolla-cross*/
 .Prata-Lua-Nova {
     background-color: #C3CBD0;
 }
@@ -16,4 +17,30 @@
 
 .Branco-Lunar {
     background-color: #F2F2F0;
+}
+
+/*Seção de cores da sw4*/
+.Cinza-Granito {
+    background-color: #667072;
+}
+
+.Preto-Atitude {
+    background-color: #343736;
+}
+
+.Branco-Lunar-Preto {
+    background-color: #F2F2F0;
+}
+
+/*Seção do rav4*/
+.Azul-Topazio {
+    background-color: #2F3951;
+}
+
+.Branco-Lunar {
+    background-color: #F2F2F0;
+}
+
+.Prata-Nevoa {
+    background-color: #C5CDCB;
 }

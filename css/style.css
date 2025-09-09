@@ -114,8 +114,18 @@ ul {
     padding: 10px;
 }
 
-#corolla_cross_preco {
+.preco {
     font-weight: bolder;
+}
+
+.btn-comprar {
+    background-color: #EB0A1E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
 }
 
 ul {
