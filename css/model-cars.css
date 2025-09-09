@@ -2,3 +2,39 @@
     width: 300px;
     height: auto;
 }
+
+/* Títulos dos nomes dos carros */
+.images h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c00; /* vermelho Toyota */
+    margin: 20px 0 10px;
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg, #c00, #111);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Linha estilizada abaixo do título */
+.images h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #c00, #000);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Efeito de brilho no hover */
+.images h2:hover {
+    color: #000;
+    transition: 0.3s;
+    text-shadow: 0px 0px 12px rgba(192, 0, 0, 0.6);
+}
