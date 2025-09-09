@@ -19,7 +19,6 @@
     background-color: #F2F2F0;
 }
 
-/*Seção de cores da sw4*/
 .Cinza-Granito {
     background-color: #667072;
 }
@@ -28,19 +27,26 @@
     background-color: #343736;
 }
 
+.Preto-Eclipse {
+    background-color: #202021;
+}
+
 .Branco-Lunar-Preto {
     background-color: #F2F2F0;
 }
 
-/*Seção do rav4*/
 .Azul-Topazio {
     background-color: #2F3951;
 }
 
-.Branco-Lunar {
-    background-color: #F2F2F0;
-}
-
 .Prata-Nevoa {
     background-color: #C5CDCB;
+}
+
+.Vermelho-Granada {
+    background-color: #7E1F23;
+}
+
+.Cinza-Celestial {
+    background-color: #8E9DA7;
 }

@@ -138,22 +138,6 @@ ul {
     list-style-type: none;
 }
 
-.nomes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nomes > ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    font-size: 18px;
-    font-weight: 600;
-}
-
 .explorar {
     display: flex;
     margin: auto;

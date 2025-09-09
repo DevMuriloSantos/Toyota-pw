@@ -1,5 +1,50 @@
-// Seção Corolla Cross
+// Seção Corolla
+const corolla = document.getElementsByClassName('corolla')[0];
+const corolla_cor = document.getElementById('corolla_cor')
+const corolla_preco = document.getElementById('corolla_preco')
+const btn_cores_corolla = document.querySelectorAll('.btn-cores-corolla');
 
+const Cor1_Corolla = document.getElementById('cor1_corolla');
+const Cor2_Corolla = document.getElementById('cor2_corolla');
+const Cor3_Corolla = document.getElementById('cor3_corolla');
+
+Cor1_Corolla.addEventListener('click', function() {
+    corolla.src = 'img/corolla/Vermelho-Granada.png';
+    corolla_cor.innerHTML = 'Vermelho Granada';
+    corolla_preco.innerHTML = 'R$ 173.610,00';
+
+    btn_cores_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_Corolla.style.border = '3px solid black';
+})
+
+Cor2_Corolla.addEventListener('click', function() {
+    corolla.src = 'img/corolla/Preto-Eclipse.png';
+    corolla_cor.innerHTML = 'Preto Eclipse';
+    corolla_preco.innerHTML = 'R$ 173.610,00';
+
+    btn_cores_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_Corolla.style.border = '3px solid black';
+})
+
+Cor3_Corolla.addEventListener('click', function() {
+    corolla.src = 'img/corolla/Cinza-Celestial.png';
+    corolla_cor.innerHTML = 'Cinza Celestial';
+    corolla_preco.innerHTML = 'R$ 173.610,00';
+
+    btn_cores_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_Corolla.style.border = '3px solid black';
+})
+
+// Seção Corolla Cross
 const corolla_cross = document.getElementsByClassName('corolla-cross')[0];
 const corolla_cross_cor = document.getElementById('corolla_cross_cor')
 const corolla_cross_preco = document.getElementById('corolla_cross_preco')

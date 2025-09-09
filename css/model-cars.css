@@ -1,32 +1,4 @@
-.corolla, .sw4, .corolla-cross {
+.corolla, .sw4, .corolla-cross, .rav4 {
     width: 300px;
     height: auto;
-}
-
-.corolla:hover {
-    content: url('../img/corolla-frente.png');
-    transition: ease-in-out 2s;
-    scale: 1.2;
-}
-
-.sw4:hover {
-    content: url('../img/sw4-frente.png');
-    transition: ease-in-out 2s;
-    scale: 1.2;
-}
-
-.corolla-cross:hover {
-    content: url('../img/corolla-cross-frente.png');
-    transition: ease-in-out 2s;
-    scale: 1.2;
-}
-
-.rav4 {
-    scale: 0.5;
-}
-
-.rav4:hover {
-    content: url('../img/rav4-frente.png');
-    transition: ease-in-out 2s;
-    scale: 1.2;
 }
