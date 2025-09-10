@@ -6,21 +6,28 @@
     margin-right: 10px;
 }
 
-/*Seção de cores do corolla-cross*/
-.Prata-Lua-Nova {
-    background-color: #C3CBD0;
-}
-
-.Preto-Infinito {
-    background-color: #282E30;
-}
-
 .Branco-Lunar {
+    background-color: #F2F2F0;
+}
+
+.Branco-Lunar-Preto {
     background-color: #F2F2F0;
 }
 
 .Cinza-Granito {
     background-color: #667072;
+}
+
+.Cinza-Celestial {
+    background-color: #8E9DA7;
+}
+
+.Cinza-Metalizado {
+    background-color: #8E9DA7;
+}
+
+.Preto-Infinito {
+    background-color: #282E30;
 }
 
 .Preto-Atitude {
@@ -31,22 +38,27 @@
     background-color: #202021;
 }
 
-.Branco-Lunar-Preto {
-    background-color: #F2F2F0;
-}
 
 .Azul-Topazio {
     background-color: #2F3951;
+}
+
+.Prata-Lua-Nova {
+    background-color: #C3CBD0;
 }
 
 .Prata-Nevoa {
     background-color: #C5CDCB;
 }
 
+.Prata-Supernova {
+    background-color: #D5D6D8;
+}
+
 .Vermelho-Granada {
     background-color: #7E1F23;
 }
 
-.Cinza-Celestial {
-    background-color: #8E9DA7;
+.Vermelho-Emoção-Preto {
+    background-color: #C40000;
 }

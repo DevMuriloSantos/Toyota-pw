@@ -107,7 +107,7 @@ ul {
     flex-direction: column;
     align-items: center;
     border-bottom: 5px solid rgb(234, 234, 234);
-    margin-top: 8px;
+    margin: 8px;
 }
 
 .images img {

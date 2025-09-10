@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/model-cars.css">
     <link rel="stylesheet" href="css/modelos-cores.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
@@ -88,15 +89,16 @@
                 <div class="carousel-item active">
                     <img src="img/fundo-carousel.png" class="fundo-carousel d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
-                        <p class="category category-carousel"><a href="#carro-passeio" class="pt1">Carro de passeio</a></p>
+                        <p class="category category-carousel"><a href="#carro-passeio" class="pt1">Carro de passeio</a>
+                        </p>
                         <p class="category category-carousel"><a href="#suv" class="pt2">SUV's</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/fundo-carousel.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                    <img src="img/fundo-carousel.png" class="fundo-carousel d-block w-100" alt="...">
+                    <div class="carousel-caption d-md-block">
+                        <p class="category category-carousel"><a href="#hibridos" class="pt3">Híbridos</a></p>
+                        <p class="category category-carousel"><a href="#suv" class="pt4">Pick-ups</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -122,7 +124,7 @@
         <div id="carro-passeio">
             <div class="images">
                 <h2>Corolla</h2>
-                <img src="img/corolla-lado.png" alt="Imagem normal" class="corolla">
+                <img src="img/corolla-lado.png" alt="Imagem normal" class="image-model corolla">
 
                 <p>Selecione a cor</p>
 
@@ -142,7 +144,7 @@
         <div id="suv">
             <div class="images">
                 <h2>Corolla Cross</h2>
-                <img src="img/corolla-cross-lado.png" alt="" class="corolla-cross">
+                <img src="img/corolla-cross-lado.png" alt="" class="image-model corolla-cross">
 
                 <p>Selecione a cor</p>
 
@@ -158,7 +160,7 @@
                 <button class="btn-comprar">Eu quero</button>
 
                 <h2>SW4</h2>
-                <img src="img/sw4-lado.png" alt="Imagem normal" class="sw4">
+                <img src="img/sw4-lado.png" alt="Imagem normal" class="image-model sw4">
 
                 <p>Selecione a cor</p>
 
@@ -174,7 +176,7 @@
                 <button class="btn-comprar">Eu quero</button>
 
                 <h2>RAV4</h2>
-                <img src="img/rav4-lado.png" alt="" class="rav4">
+                <img src="img/rav4-lado.png" alt="" class="image-model rav4">
 
                 <p>Selecione a cor</p>
 
@@ -189,25 +191,58 @@
                 <h2 id="rav4_preco" class="preco"></h2>
                 <button class="btn-comprar">Eu quero</button>
             </div>
-
-            <div class="nomes">
-                <ul>
-                    <li>
-                        <p>Corolla-Cross</p>
-                    </li>
-                    <li>
-                        <p>SW4</p>
-                    </li>
-                    <li>
-                        <p>RAV4</p>
-                    </li>
-                </ul>
-            </div>
         </div>
 
         <div id="hibridos">
-            <img src="img/corolla-lado.png" alt="Imagem normal" class="imagem-hover">
-            <p>Corolla</p>
+            <div class="images">
+                <h2>Corolla Hybrid</h2>
+                <img src="img/corolla-hybrid-lado.png" alt="" class="image-model corolla-hybrid">
+
+                <p>Selecione a cor</p>
+
+                <ul>
+                    <li><button class="Preto-Eclipse btn-cores btn-cores-corolla-hybrid" id="cor1_corolla-hybrid"></button></li>
+                    <li><button class="Prata-Supernova btn-cores btn-cores-corolla-hybrid" id="cor2_corolla-hybrid"></button></li>
+                    <li><button class="Cinza-Granito btn-cores btn-cores-corolla-hybrid" id="cor3_corolla-hybrid"></button></li>
+                </ul>
+
+                <p id="corolla_hybrid_cor"></p>
+                <p>A partir de:</p>
+                <h2 id="corolla_hybrid_preco" class="preco"></h2>
+                <button class="btn-comprar">Eu quero</button>
+
+                <h2>Corolla Cross Hybrid</h2>
+                <img src="img/corolla-cross-hybrid-lado.png" alt="Imagem normal" class="image-model corolla-cross-hybrid">
+
+                <p>Selecione a cor</p>
+
+                <ul>
+                    <li><button class="Azul-Topazio btn-cores btn-cores-corolla-cross-hybrid" id="cor1_corolla-cross-hybrid"></button></li>
+                    <li><button class="Prata-Lua-Nova btn-cores btn-cores-corolla-cross-hybrid" id="cor2_corolla-cross-hybrid"></button></li>
+                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-cross-hybrid" id="cor3_corolla-cross-hybrid"></button></li>
+                </ul>
+
+                <p id="corolla_cross_hybrid_cor"></p>
+                <p>A partir de:</p>
+                <h2 id="corolla_cross_hybrid_preco" class="preco"></h2>
+                <button class="btn-comprar">Eu quero</button>
+
+                <h2>RAV4 Plug-in Hybrid</h2>
+                <img src="img/RAV4-Plug-in Hybrid-lado.png" alt="" class="image-model rav4-hybrid">
+
+                <p>Selecione a cor</p>
+
+                <ul>
+                    <li><button class="Vermelho-Emoção-Preto btn-cores btn-cores-rav4-hybrid" id="cor1_rav4-hybrid"></button></li>
+                    <li><button class="Azul-Topazio btn-cores btn-cores-rav4-hybrid" id="cor2_rav4-hybrid"></button></li>
+                    <li><button class="Cinza-Metalizado btn-cores btn-cores-rav4-hybrid" id="cor3_rav4-hybrid"></button></li>
+                </ul>
+
+                <p id="rav4_hybrid_cor"></p>
+                <p>A partir de:</p>
+                <h2 id="rav4_hybrid_preco" class="preco"></h2>
+                <button class="btn-comprar">Eu quero</button>
+            </div>
         </div>
 
     </main>

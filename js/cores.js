@@ -181,3 +181,141 @@ Cor3_RAV4.addEventListener('click', function() {
 
     Cor3_RAV4.style.border = '3px solid black';
 })
+
+// Seção Corolla Hybrid
+const corolla_hybrid = document.getElementsByClassName('corolla-hybrid')[0];
+const corolla_hybrid_cor = document.getElementById('corolla_hybrid_cor')
+const corolla_hybrid_preco = document.getElementById('corolla_hybrid_preco')
+const btn_cores_corolla_hybrid = document.querySelectorAll('.btn-cores-corolla-hybrid');
+
+const Cor1_CorollaHybrid = document.getElementById('cor1_corolla-hybrid');
+const Cor2_CorollaHybrid = document.getElementById('cor2_corolla-hybrid');
+const Cor3_CorollaHybrid = document.getElementById('cor3_corolla-hybrid');
+
+Cor1_CorollaHybrid.addEventListener('click', function() {
+    corolla_hybrid.src = 'img/corolla-hybrid/Preto-Eclipse.png';
+    corolla_hybrid_cor.innerHTML = 'Preto Eclipse';
+    corolla_hybrid_preco.innerHTML = 'R$ 191.020,00';
+
+    btn_cores_corolla_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_CorollaHybrid.style.border = '3px solid black';
+})
+
+Cor2_CorollaHybrid.addEventListener('click', function() {
+    corolla_hybrid.src = 'img/corolla-hybrid/Prata-Supernova.png';
+    corolla_hybrid_cor.innerHTML = 'Prata Supernova';
+    corolla_hybrid_preco.innerHTML = 'R$ 191.020,00';
+
+    btn_cores_corolla_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_CorollaHybrid.style.border = '3px solid black';
+})
+
+Cor3_CorollaHybrid.addEventListener('click', function() {
+    corolla_hybrid.src = 'img/corolla-hybrid/Cinza-Granito.png';
+    corolla_hybrid_cor.innerHTML = 'Cinza Granito';
+    corolla_hybrid_preco.innerHTML = 'R$ 191.020,00';
+
+    btn_cores_corolla_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_CorollaHybrid.style.border = '3px solid black';
+})
+
+// Seção Corolla Cross Hybrid
+const corolla_cross_hybrid = document.getElementsByClassName('corolla-cross-hybrid')[0];
+const corolla_cross_hybrid_cor = document.getElementById('corolla_cross_hybrid_cor')
+const corolla_cross_hybrid_preco = document.getElementById('corolla_cross_hybrid_preco')
+const btn_cores_corolla_cross_hybrid = document.querySelectorAll('.btn-cores-corolla-cross-hybrid');
+
+const Cor1_CorollaCrossHybrid = document.getElementById('cor1_corolla-cross-hybrid');
+const Cor2_CorollaCrossHybrid = document.getElementById('cor2_corolla-cross-hybrid');
+const Cor3_CorollaCrossHybrid = document.getElementById('cor3_corolla-cross-hybrid');
+
+Cor1_CorollaCrossHybrid.addEventListener('click', function() {
+    corolla_cross_hybrid.src = 'img/corolla-cross-hybrid/Azul-Topazio.png';
+    corolla_cross_hybrid_cor.innerHTML = 'Azul Topázio';
+    corolla_cross_hybrid_preco.innerHTML = 'R$ 221.910,00';
+
+    btn_cores_corolla_cross_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_CorollaCrossHybrid.style.border = '3px solid black';
+})
+
+Cor2_CorollaCrossHybrid.addEventListener('click', function() {
+    corolla_cross_hybrid.src = 'img/corolla-cross-hybrid/Prata-Lua-Nova.png';
+    corolla_cross_hybrid_cor.innerHTML = 'Prata Lua Nova';
+    corolla_cross_hybrid_preco.innerHTML = 'R$ 221.910,00';
+
+    btn_cores_corolla_cross_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_CorollaCrossHybrid.style.border = '3px solid black';
+})
+
+Cor3_CorollaCrossHybrid.addEventListener('click', function() {
+    corolla_cross_hybrid.src = 'img/corolla-cross-hybrid/Vermelho-Granada.png';
+    corolla_cross_hybrid_cor.innerHTML = 'Vermelho Granada';
+    corolla_cross_hybrid_preco.innerHTML = 'R$ 221.910,00';
+
+    btn_cores_corolla_cross_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_CorollaCrossHybrid.style.border = '3px solid black';
+})
+
+// Seção RAV4 Hybrid
+const rav4_hybrid = document.getElementsByClassName('rav4-hybrid')[0];
+const rav4_hybrid_cor = document.getElementById('rav4_hybrid_cor')
+const rav4_hybrid_preco = document.getElementById('rav4_hybrid_preco')
+const btn_cores_rav4_hybrid = document.querySelectorAll('.btn-cores-rav4-hybrid');
+
+const Cor1_RAV4Hybrid = document.getElementById('cor1_rav4-hybrid');
+const Cor2_RAV4Hybrid = document.getElementById('cor2_rav4-hybrid');
+const Cor3_RAV4Hybrid = document.getElementById('cor3_rav4-hybrid');
+
+Cor1_RAV4Hybrid.addEventListener('click', function() {
+    rav4_hybrid.src = 'img/rav4-hybrid/Vermelho-Emoção.png';
+    rav4_hybrid_cor.innerHTML = 'Vermelho Emoção/Preto';
+    rav4_hybrid_preco.innerHTML = 'R$ 399.990,00';
+
+    btn_cores_rav4_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_RAV4Hybrid.style.border = '3px solid black';
+})
+
+Cor2_RAV4Hybrid.addEventListener('click', function() {
+    rav4_hybrid.src = 'img/rav4-hybrid/Azul-Topazio.png';
+    rav4_hybrid_cor.innerHTML = 'Azul topázio/Preto';
+    rav4_hybrid_preco.innerHTML = 'R$ 399.990,00';
+
+    btn_cores_rav4_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_RAV4Hybrid.style.border = '3px solid black';
+})
+
+Cor3_RAV4Hybrid.addEventListener('click', function() {
+    rav4_hybrid.src = 'img/rav4-hybrid/Cinza-Metalizado.png';
+    rav4_hybrid_cor.innerHTML = 'Cinza Metalizado/Preto';
+    rav4_hybrid_preco.innerHTML = 'R$ 399.990,00';
+
+    btn_cores_rav4_hybrid.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_RAV4Hybrid.style.border = '3px solid black';
+})
