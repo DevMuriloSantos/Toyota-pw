@@ -319,3 +319,83 @@ Cor3_RAV4Hybrid.addEventListener('click', function() {
 
     Cor3_RAV4Hybrid.style.border = '3px solid black';
 })
+
+// Seção Hilux Cabine Dupla
+const hilux_cabine_dupla = document.getElementsByClassName('hilux-cabine-dupla')[0];
+const hilux_cabine_dupla_cor = document.getElementById('hilux_cabine_dupla_cor')
+const hilux_cabine_dupla_preco = document.getElementById('hilux_cabine_dupla_preco')
+const btn_cores_hilux_cabine_dupla = document.querySelectorAll('.btn-cores-hilux-cabine-dupla');
+
+const Cor1_HiluxCabineDupla = document.getElementById('cor1_hilux-cabine-dupla');
+const Cor2_HiluxCabineDupla = document.getElementById('cor2_hilux-cabine-dupla');
+const Cor3_HiluxCabineDupla = document.getElementById('cor3_hilux-cabine-dupla');
+
+Cor1_HiluxCabineDupla.addEventListener('click', function() {
+    hilux_cabine_dupla.src = 'img/hilux-cabine-dupla/Preto-Atitude.png';
+    hilux_cabine_dupla_cor.innerHTML = 'Preto Atitude';
+    hilux_cabine_dupla_preco.innerHTML = 'R$ 355.300,00';
+
+    btn_cores_hilux_cabine_dupla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_HiluxCabineDupla.style.border = '3px solid black';
+})
+
+Cor2_HiluxCabineDupla.addEventListener('click', function() {
+    hilux_cabine_dupla.src = 'img/hilux-cabine-dupla/Cinza-Granito.png';
+    hilux_cabine_dupla_cor.innerHTML = 'Cinza Granito';
+    hilux_cabine_dupla_preco.innerHTML = 'R$ 355.300,00';
+
+    btn_cores_hilux_cabine_dupla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_HiluxCabineDupla.style.border = '3px solid black';
+})
+
+Cor3_HiluxCabineDupla.addEventListener('click', function() {
+    hilux_cabine_dupla.src = 'img/hilux-cabine-dupla/Vermelho-Volcano.png';
+    hilux_cabine_dupla_cor.innerHTML = 'Vermelho Volcano';
+    hilux_cabine_dupla_preco.innerHTML = 'R$ 355.300,00';
+
+    btn_cores_hilux_cabine_dupla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_HiluxCabineDupla.style.border = '3px solid black';
+})
+
+//Seção Hilux cabine simples
+const hilux_cabine_simples = document.getElementsByClassName('hilux-cabine-simples')[0];
+const hilux_cabine_simples_cor = document.getElementById('hilux_cabine_simples_cor')
+const hilux_cabine_simples_preco = document.getElementById('hilux_cabine_simples_preco')
+const btn_cores_hilux_cabine_simples = document.querySelectorAll('.btn-cores-hilux-cabine-simples');
+
+const Cor1_HiluxCabineSimples = document.getElementById('cor1_hilux-cabine-simples');
+const Cor2_HiluxCabineSimples = document.getElementById('cor2_hilux-cabine-simples');
+const Cor3_HiluxCabineSimples = document.getElementById('cor3_hilux-cabine-simples');
+
+Cor1_HiluxCabineSimples.addEventListener('click', function() {
+    hilux_cabine_simples.src = 'img/hilux-cabine-simples/Branco-Polar.png';
+    hilux_cabine_simples_cor.innerHTML = 'Branco Polar';
+    hilux_cabine_simples_preco.innerHTML = 'R$ 271.790,00';
+
+    btn_cores_hilux_cabine_simples.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_HiluxCabineSimples.style.border = '3px solid black';
+})
+
+Cor2_HiluxCabineSimples.addEventListener('click', function() {
+    hilux_cabine_simples.src = 'img/hilux-cabine-simples/Prata-Argentum.png';
+    hilux_cabine_simples_cor.innerHTML = 'Prata Argentum';
+    hilux_cabine_simples_preco.innerHTML = 'R$ 273.800,00';
+
+    btn_cores_hilux_cabine_simples.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_HiluxCabineSimples.style.border = '3px solid black';
+})
