@@ -399,3 +399,25 @@ Cor2_HiluxCabineSimples.addEventListener('click', function() {
 
     Cor2_HiluxCabineSimples.style.border = '3px solid black';
 })
+
+//Seção Hiace
+const hiace = document.getElementsByClassName('hiace')[0];
+const hiace_cor = document.getElementById('hiace_cor')
+const hiace_preco = document.getElementById('hiace_preco')
+const btn_cores_hiace = document.querySelectorAll('.btn-cores-hiace');
+
+const Cor1_Hiace = document.getElementById('cor1_hiace');
+const Cor2_Hiace = document.getElementById('cor2_hiace');
+const Cor3_Hiace = document.getElementById('cor3_hiace');
+
+Cor1_Hiace.addEventListener('click', function() {
+    hiace.src = 'img/hiace/Branco-Solido.png';
+    hiace_cor.innerHTML = 'Branco Sólido';
+    hiace_preco.innerHTML = 'R$ 364.990,00';
+
+    btn_cores_hiace.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_Hiace.style.border = '3px solid black';
+})

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
+
+    <title>eletrificação</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark fixed-top">
+            <div class="container-fluid">
+                <img id="logo" src="img/toyota-logo-red.png" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <img src="img/logo-toyota.svg" alt="">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="eletrificacao.html">Tudo sobre eletrificação</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-eletrificacao" id="btn-inicio"><a href="#inicio">Inicio</a></button>
+            <button type="button" class="btn btn-eletrificacao" id="btn-funcionamento"><a href="#funcionamento">Como funciona</a></button>
+        </div>
+
+        <div id="inicio">
+            <h1>Mobilidade e Inovação</h1>
+            <p>Híbridos, Híbrido FLEX e Plug in</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/card-eletrificacao/hev.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Combina motor a combustão com motores elétricos (um ou dois, em geral).
+                                A
+                                bateria é recarregada nas desacelerações do veículo ou na utilização do motor a
+                                combustão.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/card-eletrificacao/hev-ffv.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Desenvolvido pela Toyota, combina a eficiência do sistema elétrico com
+                                a
+                                sustentabilidade do motor flex quando abastecido com etanol.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/card-eletrificacao/phev.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Demonstrando um comprometimento com a evolução e adaptação ao mercado,
+                                oferecemos além da tecnologia híbrida com abastecimento a gasolina, a tecnologia que
+                                traz a
+                                possibilidade de recarregar o seu veículo na tomada e com uma autonomia de condução 100%
+                                elétrica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="funcionamento" class="div-eletrificacao">
+            <img src="img/card-eletrificacao/especificacao.png" alt="">
+
+            <img src="img/card-eletrificacao/carro_1.png" alt="">
+            <h2>Partida e condução em velocidade baixa</h2>
+            <p>Ao dar partida e em conduções de baixa velocidade, o veículo prioriza o motor elétrico, reduzindo o
+                consumo e o ruído.</p>
+
+            <img src="img/card-eletrificacao/carro_2.png" alt="">
+            <h2>Condução normal</h2>
+            <p>Em momentos de condução normal, ambos os motores podem funcionar em conjunto para otimizar o desempenho.
+            </p>
+            <p>A tecnologia híbrida da Toyota utiliza um sistema inteligente de gerenciamento de energia que decide
+                automaticamente quando usar cada motor, buscando a melhor eficiência.</p>
+
+            <img src="img/card-eletrificacao/carro_3.png" alt="">
+            <h2>Aceleração forte</h2>
+            <p>Quando é exigido mais potência do veículo, como em acelerações fortes ou subidas íngremes, o motor a
+                combustão é priorizado.</p>
+
+            <img src="img/card-eletrificacao/carro_4.png" alt="">
+            <h2>Desaceleração e frenagem</h2>
+            <p>Durante frenagens e desacelerações, o motor elétrico funciona como um gerador, convertendo a energia
+                cinética em elétrica para recarregar a bateria.</p>
+        </div>
+    </main>
+
+    <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/eletrificacao.js"></script>
+</body>
+
+</html>
