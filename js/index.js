@@ -14,9 +14,8 @@ const pickups = document.getElementById("pickups");
 const comercial = document.getElementById("comercial")
 const esportivos = document.getElementById('esportivos')
 
-categoryLinks[0].style.borderBottom = '3px solid red';
 carro_passeio_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {
@@ -35,7 +34,7 @@ carro_passeio_links.forEach(link => {
 });
 
 suvs_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {
@@ -54,7 +53,7 @@ suvs_links.forEach(link => {
 });
 
 hibridos_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {
@@ -73,7 +72,7 @@ hibridos_links.forEach(link => {
 });
 
 pickups_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {
@@ -92,7 +91,7 @@ pickups_links.forEach(link => {
 });
 
 comercial_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {
@@ -111,7 +110,7 @@ comercial_links.forEach(link => {
 });
 
 esportivos_links.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', function (event) {
     event.preventDefault();
 
     categoryLinks.forEach(link => {

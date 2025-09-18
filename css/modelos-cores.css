@@ -6,11 +6,7 @@
     margin-right: 10px;
 }
 
-.Branco-Lunar {
-    background-color: #F2F2F0;
-}
-
-.Branco-Lunar-Preto {
+.Branco-Lunar, .Branco-Lunar-Preto {
     background-color: #F2F2F0;
 }
 
@@ -22,11 +18,7 @@
     background-color: #667072;
 }
 
-.Cinza-Celestial {
-    background-color: #8E9DA7;
-}
-
-.Cinza-Metalizado {
+.Cinza-Celestial, .Cinza-Metalizado {
     background-color: #8E9DA7;
 }
 
@@ -38,10 +30,10 @@
     background-color: #343736;
 }
 
-.Preto-Eclipse {
+.Preto-Eclipse,
+.Solid-Black {
     background-color: #202021;
 }
-
 
 .Azul-Topazio {
     background-color: #2F3951;
@@ -51,7 +43,7 @@
     background-color: #C3CBD0;
 }
 
-.Prata-Nevoa {
+.Prata-Nevoa, .Prata-Argentum {
     background-color: #C5CDCB;
 }
 
@@ -59,15 +51,15 @@
     background-color: #D5D6D8;
 }
 
-.Prata-Argentum {
-    background-color: #C5CDCB;
+.Precious-Metal {
+    background-color: #8E9DA7;
 }
 
 .Vermelho-Granada {
     background-color: #7E1F23;
 }
 
-.Vermelho-Emoção-Preto {
+.Vermelho-Emoção-Preto, .Emotional-Red {
     background-color: #C40000;
 }
 

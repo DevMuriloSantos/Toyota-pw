@@ -1,15 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <title>Chat GPT</title>
-</head>
-<body>
-  <h1>Chat GPT</h1>
-  <input id="msg" placeholder="Digite sua mensagem">
-  <button id="send">Enviar</button>
-  <div id="chat"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota - Agendamento</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
 
-  <script src="js/index.js"></script>
+    header {
+      background: #e30613;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      margin-bottom: 1rem;
+      color: #e30613;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #e30613;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #b0050f;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Agendamento de Visita - Toyota</header>
+  <div class="container">
+    <h2>Preencha o formulário</h2>
+    <form>
+      <label>Nome completo</label>
+      <input type="text" required>
+
+      <label>E-mail</label>
+      <input type="email" required>
+
+      <label>Telefone</label>
+      <input type="tel" required>
+
+      <label>Data da visita</label>
+      <input type="date" required>
+
+      <label>Turno</label>
+      <select>
+        <option>Manhã</option>
+        <option>Tarde</option>
+      </select>
+
+      <label>Observações</label>
+      <textarea rows="4"></textarea>
+
+      <button type="submit">Agendar</button>
+    </form>
+  </div>
 </body>
+
 </html>

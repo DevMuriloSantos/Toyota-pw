@@ -22,7 +22,7 @@ main {
     background-color: #FFFFFF;
 }
 
-main>h1 h2 {
+main > h1 h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -42,8 +42,31 @@ main>h1 h2 {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%23000000'%3E%3Cpath d='M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z'/%3E%3C/svg%3E") !important;
 }
 
+.offcanvas-header {
+    text-align: center;
+}
+
+.offcanvas-header .btn-close {
+    margin-left: 0px;
+}
+
+.offcanvas-header > h1 {
+    display: flex;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1c1c1cd5;
+    text-align: center;
+}
+
 .nav-link {
     color: rgb(0 0 0 / 55%) !important;
+}
+
+.active-link {
+    color: #EB0A1E !important;
+    border-bottom: 3px solid #EB0A1E !important;
 }
 
 .btn-close {
@@ -78,6 +101,10 @@ main>h1 h2 {
     color: white;
 }
 
+.pt1 {
+    border-bottom: 3px solid red;
+}
+
 .nav-categories {
     display: none;
 }
@@ -95,8 +122,17 @@ main>h1 h2 {
 #suv,
 #hibridos,
 #pickups,
-#comercial {
+#comercial, #esportivos {
     display: none;
+}
+
+.valores {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+img {
+    width: 100%;
 }
 
 .images {
@@ -125,7 +161,7 @@ main>h1 h2 {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    margin: 10px;
+    margin: 30px 10px;
     cursor: pointer;
 }
 
@@ -182,8 +218,13 @@ ul {
     margin: 0;
 }
 
-.sobre_marca > li::marker {
+.sobre_marca>li::marker {
     color: #EB0A1E;
+}
+
+.nossas-fabricas {
+    color: black;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
@@ -207,16 +248,13 @@ ul {
         align-items: center;
     }
 
-    /* Primeira imagem ocupa as duas colunas */
     #funcionamento img:first-of-type {
         grid-column: 1 / 3;
         justify-self: center;
         margin-bottom: 32px;
         width: 60%;
-        /* ajuste conforme desejar */
     }
 
-    /* Zig zag só a partir da segunda imagem */
     #funcionamento img:not(:first-of-type):nth-of-type(odd) {
         grid-column: 1;
     }
@@ -235,5 +273,24 @@ ul {
     #funcionamento p:nth-of-type(even) {
         grid-column: 1;
         text-align: right;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 8px;
+        align-items: center;
+    }
+
+    .div1 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+    }
+
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-column-start: 3;
     }
 }

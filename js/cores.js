@@ -421,3 +421,141 @@ Cor1_Hiace.addEventListener('click', function() {
 
     Cor1_Hiace.style.border = '3px solid black';
 })
+
+//Seção GR Corolla
+const gr_corolla = document.getElementsByClassName('gr-corolla')[0];
+const gr_corolla_cor = document.getElementById('gr_corolla_cor')
+const gr_corolla_preco = document.getElementById('gr_corolla_preco')
+const btn_cores_gr_corolla = document.querySelectorAll('.btn-cores-gr-corolla');
+
+const Cor1_GR_Corolla = document.getElementById('cor1_gr-corolla');
+const Cor2_GR_Corolla = document.getElementById('cor2_gr-corolla');
+const Cor3_GR_Corolla = document.getElementById('cor3_gr-corolla');
+
+Cor1_GR_Corolla.addEventListener('click', function() {
+    gr_corolla.src = 'img/gr-corolla/Solid-Black.png';
+    gr_corolla_cor.innerHTML = 'Solid Black';
+    gr_corolla_preco.innerHTML = 'R$ 461.990,00';
+
+    btn_cores_gr_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_GR_Corolla.style.border = '3px solid black';
+})
+
+Cor2_GR_Corolla.addEventListener('click', function() {
+    gr_corolla.src = 'img/gr-corolla/Emotional-Red.png';
+    gr_corolla_cor.innerHTML = 'Emotional Red';
+    gr_corolla_preco.innerHTML = 'R$ 461.990,00';
+
+    btn_cores_gr_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_GR_Corolla.style.border = '3px solid black';
+})
+
+Cor3_GR_Corolla.addEventListener('click', function() {
+    gr_corolla.src = 'img/gr-corolla/Precious-Metal.png';
+    gr_corolla_cor.innerHTML = 'Precious Metal';
+    gr_corolla_preco.innerHTML = 'R$ 461.990,00';
+
+    btn_cores_gr_corolla.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_GR_Corolla.style.border = '3px solid black';
+})
+
+// Seção Corolla GR Sport
+const corolla_gr_sport = document.getElementsByClassName('corolla-gr-sport')[0];
+const corolla_gr_sport_cor = document.getElementById('corolla_gr_sport_cor')
+const corolla_gr_sport_preco = document.getElementById('corolla_gr_sport_preco')
+const btn_cores_corolla_gr_sport = document.querySelectorAll('.btn-cores-corolla-gr-sport');
+
+const Cor1_Corolla_GR_Sport = document.getElementById('cor1_corolla-gr-sport');
+const Cor2_Corolla_GR_Sport = document.getElementById('cor2_corolla-gr-sport');
+const Cor3_Corolla_GR_Sport = document.getElementById('cor3_corolla-gr-sport');
+
+Cor1_Corolla_GR_Sport.addEventListener('click', function() {
+    corolla_gr_sport.src = 'img/corolla-gr-sport/Vermelho-Granada.png';
+    corolla_gr_sport_cor.innerHTML = 'Vermelho Granada';
+    corolla_gr_sport_preco.innerHTML = 'R$ 199.790,00';
+
+    btn_cores_corolla_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_Corolla_GR_Sport.style.border = '3px solid black';
+})
+
+Cor2_Corolla_GR_Sport.addEventListener('click', function() {
+    corolla_gr_sport.src = 'img/corolla-gr-sport/Preto-Eclipse.png';
+    corolla_gr_sport_cor.innerHTML = 'Preto Eclipse';
+    corolla_gr_sport_preco.innerHTML = 'R$ 199.790,00';
+
+    btn_cores_corolla_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_Corolla_GR_Sport.style.border = '3px solid black';
+})
+
+Cor3_Corolla_GR_Sport.addEventListener('click', function() {
+    corolla_gr_sport.src = 'img/corolla-gr-sport/Branco-Lunar.png';
+    corolla_gr_sport_cor.innerHTML = 'Branco Lunar';
+    corolla_gr_sport_preco.innerHTML = 'R$ 200.110,00';
+
+    btn_cores_corolla_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_Corolla_GR_Sport.style.border = '3px solid black';
+})
+
+// Seção Corolla Cross GR Sport
+const corolla_cross_gr_sport = document.getElementsByClassName('corolla-cross-gr-sport')[0];
+const corolla_cross_gr_sport_cor = document.getElementById('corolla_cross_gr_sport_cor')
+const corolla_cross_gr_sport_preco = document.getElementById('corolla_cross_gr_sport_preco')
+const btn_cores_corolla_cross_gr_sport = document.querySelectorAll('.btn-cores-corolla-cross-gr-sport');
+
+const Cor1_Corolla_Cross_GR_Sport = document.getElementById('cor1_corolla-cross-gr-sport');
+const Cor2_Corolla_Cross_GR_Sport = document.getElementById('cor2_corolla-cross-gr-sport');
+const Cor3_Corolla_Cross_GR_Sport = document.getElementById('cor3_corolla-cross-gr-sport');
+
+Cor1_Corolla_Cross_GR_Sport.addEventListener('click', function() {
+    corolla_cross_gr_sport.src = 'img/corolla-cross-gr-sport/Preto-Infinito.png';
+    corolla_cross_gr_sport_cor.innerHTML = 'Preto Infinito';
+    corolla_cross_gr_sport_preco.innerHTML = 'R$ 214.590,00';
+
+    btn_cores_corolla_cross_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor1_Corolla_Cross_GR_Sport.style.border = '3px solid black';
+})
+
+Cor2_Corolla_Cross_GR_Sport.addEventListener('click', function() {
+    corolla_cross_gr_sport.src = 'img/corolla-cross-gr-sport/Branco-Lunar.png';
+    corolla_cross_gr_sport_cor.innerHTML = 'Branco Lunar';
+    corolla_cross_gr_sport_preco.innerHTML = 'R$ 216.690,00';
+
+    btn_cores_corolla_cross_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor2_Corolla_Cross_GR_Sport.style.border = '3px solid black';
+})
+
+Cor3_Corolla_Cross_GR_Sport.addEventListener('click', function() {
+    corolla_cross_gr_sport.src = 'img/corolla-cross-gr-sport/Vermelho-Granada.png';
+    corolla_cross_gr_sport_cor.innerHTML = 'Vermelho Granada';
+    corolla_cross_gr_sport_preco.innerHTML = 'R$ 216.690,00';
+
+    btn_cores_corolla_cross_gr_sport.forEach(btn => {
+        btn.style.border = 'none';
+    })
+
+    Cor3_Corolla_Cross_GR_Sport.style.border = '3px solid black';
+})
