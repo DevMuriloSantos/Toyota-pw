@@ -3,20 +3,21 @@ select {
     padding: 12px 20px;
     margin: 8px 0 !important;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #676767;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .secao-est {
-    color: gray;
+    color: #df3333;
 }
 
 .selects {
     padding: 30px;
     width: 100%;
     border-radius: 8px;
-    background-color: gray;
+    background-color: #d1c7c7;
+    box-shadow: 6px 6px 2px 0px #8080808f;
 }
 
 .card {
@@ -56,4 +57,26 @@ select {
 
 .img-servicos {
     width: 36px;
+}
+
+.erro {
+    animation: erro 0.3s;
+}
+
+@keyframes erro {
+    25% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
 }

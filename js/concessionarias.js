@@ -16,10 +16,28 @@ buscar.addEventListener('click', () => {
     const estado = document.getElementById('id_estado');
     const cidade = document.getElementById('id_cidade');
 
-    if (estado.value == '0') {
-        alert('[ERROR] Por favor, selecione um estado.');
+    if (estado.value == '0' || cidade.value == '0') {
+        alert('[ERROR] Verifique os campos acima e tente novamente!');
+        estado.style.border = '2px solid red';
+        estado.style.color = 'red';
+        cidade.style.border = '2px solid red';
+        cidade.style.color = 'red';
+
+        estado.classList.add('erro');
+        cidade.classList.add('erro');
+
+        setTimeout(() => {
+            estado.classList.remove('erro');
+            cidade.classList.remove('erro');
+        }, 300);
+
         return;
     }
+
+    estado.style.border = '1px solid #676767';
+    estado.style.color = 'black';
+    cidade.style.border = '1px solid #676767';
+    cidade.style.color = 'black';
 
     if (estado.value == 'SP' && cidade.value == 'SOR') {
         card_sorocaba.style.display = 'block';
@@ -61,5 +79,21 @@ buscar.addEventListener('click', () => {
         mapa_sp.style.display = 'none';
         card_sorocaba.style.display = 'none';
         mapa_sorocaba.style.display = 'none';
+    } else {
+        alert('[ERROR] Selecione a cidade correspondente ao seu estado!');
+        estado.style.border = '2px solid red';
+        estado.style.color = 'red';
+        cidade.style.border = '2px solid red';
+        cidade.style.color = 'red';
+
+        estado.classList.add('erro');
+        cidade.classList.add('erro');
+
+        setTimeout(() => {
+            estado.classList.remove('erro');
+            cidade.classList.remove('erro');
+        }, 300);
+
+        return;
     }
 });
