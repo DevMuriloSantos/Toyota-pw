@@ -8,6 +8,10 @@ select {
     box-sizing: border-box;
 }
 
+.secao-est {
+    color: gray;
+}
+
 .selects {
     padding: 30px;
     width: 100%;
