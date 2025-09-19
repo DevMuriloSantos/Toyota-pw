@@ -1,0 +1,55 @@
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0 !important;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.selects {
+    padding: 30px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: gray;
+}
+
+.card {
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.card > h1 {
+    color: red;
+}
+
+.card > .borda-card {
+    border: 1px solid gray;
+}
+
+.link-email {
+    text-decoration: none;
+}
+
+.card-mapa-sorocaba, .mapa-sorocaba, .card-mapa-sp, .mapa-sp, .card-mapa-jp, .mapa-jp, .card-mapa-cab, .mapa-cab {
+    display: none;
+}
+
+.mapa {
+    margin-top: 20px;
+}
+
+.mapa > iframe {
+    display: flex;
+    margin: auto;
+}
+
+.img-servicos {
+    width: 36px;
+}

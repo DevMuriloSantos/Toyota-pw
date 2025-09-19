@@ -155,7 +155,7 @@ img {
     font-weight: bolder;
 }
 
-.btn-comprar {
+.btn-comprar, .btn-visita {
     background-color: #EB0A1E;
     color: white;
     border: none;
@@ -163,6 +163,15 @@ img {
     padding: 10px 20px;
     margin: 30px 10px;
     cursor: pointer;
+}
+
+.btn-visita {
+    width: 148px;
+}
+
+.btn-visita > a {
+    color: white;
+    text-decoration: none;
 }
 
 ul {

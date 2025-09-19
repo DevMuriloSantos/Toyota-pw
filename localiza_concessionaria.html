@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/concessionarias.css">
+
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1>Localize uma concessionária</h1>
+
+        <div class="selects">
+            <select name="estado" id="id_estado">
+                <option class="opt-estado" value="0" disabled selected>Selecione um estado</option>
+                <option class="opt-estado" value="SP">São Paulo</option>
+                <option class="opt-estado" value="PB">Paraíba</option>
+            </select>
+
+            <select name="cidade" id="id_cidade">
+                <option class="opt-cidade" value="0" disabled selected>Selecione uma cidade</option>
+                <option class="opt-cidade" value="SOR" selected>Sorocaba</option>
+                <option class="opt-cidade" value="SP" selected>São Paulo</option>
+                <option class="opt-cidade" disabled>Seção do estado da Paraíba</option>
+                <option class="opt-cidade" value="JP" selected>João Pessoa</option>
+                <option class="opt-cidade" value="CAB" selected>Cabedelo</option>
+            </select>
+
+            <button type="submit" id="buscar">Buscar</button>
+        </div>
+
+        <div id="sorocaba" class="card-mapa card-mapa-sorocaba">
+            <div class="card">
+                <h1>Ramires</h1>
+                <p>AVENIDA DARCI CARVALHO DAFFERNER, 301, Boa Vista, Sorocaba, CEP 18085-850</p>
+
+                <p><a class="link-email" href="mailto:sorocaba@ramires.com.br">sorocaba@ramires.com.br</a></p>
+
+                <p><a class="link" href="http://www.ramiresmotors.com.br">www.ramiresmotors.com.br ↗</a></p>
+
+                <p>(15) 3224-5444</p>
+                <p>(55) 15322-45444</p>
+
+                <span class="borda-card"></span>
+
+                <h2>Serviços oferecidos</h2>
+                    <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
+                    <p>Preço fechado</p>
+                    <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
+                    <p>Recall</p>
+                    <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
+                    <p>Revisões periódicas</p>
+                    <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
+                    <p>Elegibilidade Toyota 10</p>
+            </div>
+        </div>
+
+        <div id="sp" class="card-mapa card-mapa-sp">
+            <div class="card">
+                <h1>Collection Augusta</h1>
+                <p>Rua Matias Aires, 160, Consolação, São Paulo, CEP 01309-020</p>
+
+                <p><a class="link-email" href="mailto:mkt1@collectionaugusta.com.br">mkt1@collectionaugusta.com.br</a>
+                </p>
+
+                <p><a class="link" href="http://www.collectionmotors.com.br">www.collectionmotors.com.br ↗</a></p>
+
+                <p>(11) 3383-1000</p>
+                <p>(55) 11978-857432</p>
+
+                <span class="borda-card"></span>
+
+                <h2>Serviços oferecidos</h2>
+            </div>
+        </div>
+
+        <div id="jp" class="card-mapa card-mapa-jp">
+            <div class="card">
+                <h1>Newland João Pessoa</h1>
+                <p>Praça da Independência, 145, Tambiá, João Pessoa, CEP 58020-544</p>
+
+                <p><a class="link-email" href="mailto:recepcao.jp@newland.com.br">recepcao.jp@newland.com.br</a>
+                </p>
+
+                <p><a class="link" href="http://www.newland.com.br">www.newland.com.br ↗</a></p>
+
+                <p>(86) 4009-4930</p>
+                <p>(86) 4009-4930</p>
+
+                <span class="borda-card"></span>
+
+                <h2>Serviços oferecidos</h2>
+            </div>
+        </div>
+
+        <div id="cab" class="card-mapa card-mapa-cab">
+            <div class="card">
+                <h1>Newland Cabedelo</h1>
+                <p>Rua Hortência Helena de Amorim Brito, 1101, Jardim America, Cabedelo, CEP 58020-544</p>
+
+                <p><a class="link-email" href="mailto:recepcao.cbd@newland.com.br">recepcao.cbd@newland.com.br</a>
+                </p>
+
+                <p><a class="link" href="http://www.newland.com.br">www.newland.com.br ↗</a></p>
+
+                <p>(83) 3565-1900</p>
+                <p>(83) 3565-1900</p>
+
+                <span class="borda-card"></span>
+
+                <h2>Serviços oferecidos</h2>
+            </div>
+        </div>
+    </main>
+    
+    <div class="mapa mapa-sorocaba">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.915112238659!2d-47.432158389194974!3d-23.473913078771787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf601c5b2c8405%3A0x609fd3f1a45f9a9c!2sRamires%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238533628!5m2!1spt-BR!2sbr"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="mapa mapa-sp">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.6968604380927!2d-46.660110089192614!3d-23.55523667871566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5833386ea607%3A0x9c851319c0f3be1b!2sConcession%C3%A1ria%20Toyota%20Collection%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238992903!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="mapa mapa-jp">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.884304749379!2d-34.872716025086895!3d-7.119674792884048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace7917bf809fb%3A0x4081911d4b4fab8f!2sNewland%20Toyota%20-%20Jo%C3%A3o%20Pessoa%20PB!5e1!3m2!1spt-BR!2sbr!4v1758239428440!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="mapa mapa-cab">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2257767819283!2d-34.85120742508723!3d-7.079261592923604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acdd92feaf878f%3A0xb58ed83219890401!2sNewland%20Toyota%20-%20Cabedelo%20PB!5e1!3m2!1spt-BR!2sbr!4v1758240778587!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/concessionarias.js"></script>
+</body>
+
+</html>
