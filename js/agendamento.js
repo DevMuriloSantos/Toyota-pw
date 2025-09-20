@@ -22,6 +22,7 @@
             const valorData = data.value;
             console.log(valorData);
             alert('Agendamento realizado com sucesso!')
+            //window.location.href = 'index.html'
         }, false)
     })
 })()
