@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/visita.css">
   <title>Toyota - Agendamento</title>
 </head>
@@ -12,26 +13,35 @@
   <header>
     Agendamento de Visita
   </header>
-  <button class="return"><a href="toyota_tour.html"><p class="seta-return">⬅</p> Voltar</a></button>
+  <button class="return"><a href="toyota_tour.html">
+      <p class="seta-return">⬅</p> Voltar
+    </a></button>
   <div class="container">
     <h2>Preencha o formulário</h2>
     <p class="warning">Todos os campos com (*) devem ser preenchidos</p>
-    <form>
+    <form class="needs-validation" novalidate>
       <div class="wave-group">
-        <input required="" type="text" class="input">
+        <input required type="text" class="input form-control" id="validationCustom01">
         <span class="bar"></span>
-        <label class="label">
+        <label class="label form-label" for="validationCustom01">
           <span class="label-char" style="--index: 0">*N</span>
           <span class="label-char" style="--index: 1">a</span>
           <span class="label-char" style="--index: 2">m</span>
           <span class="label-char" style="--index: 3">e</span>
         </label>
+
+        <div class="valid-feedback">
+          Correto!
+        </div>
+        <div class="invalid-feedback">
+          Campo obrigatório.
+        </div>
       </div>
 
       <div class="wave-group">
-        <input type="email" required class="input">
+        <input type="email" required class="input form-control" id="validationCustom02">
         <span class="bar"></span>
-        <label class="label">
+        <label class="label form-label" for="validationCustom02">
           <span class="label-char" style="--index: 0">*E</span>
           <span class="label-char" style="--index: 1">-</span>
           <span class="label-char" style="--index: 2">m</span>
@@ -39,12 +49,19 @@
           <span class="label-char" style="--index: 4">i</span>
           <span class="label-char" style="--index: 5">l</span>
         </label>
+
+        <div class="valid-feedback">
+          Correto!
+        </div>
+        <div class="invalid-feedback">
+          Campo obrigatório.
+        </div>
       </div>
 
       <div class="wave-group">
-        <input type="tel" required class="input">
+        <input type="tel" required class="input form-control" id="validationCustom03">
         <span class="bar"></span>
-        <label class="label">
+        <label class="label form-label" for="validationCustom03">
           <span class="label-char" style="--index: 0">*T</span>
           <span class="label-char" style="--index: 1">e</span>
           <span class="label-char" style="--index: 2">l</span>
@@ -54,23 +71,48 @@
           <span class="label-char" style="--index: 6">n</span>
           <span class="label-char" style="--index: 7">e</span>
         </label>
+
+        <div class="valid-feedback">
+          Correto!
+        </div>
+        <div class="invalid-feedback">
+          Campo obrigatório.
+        </div>
       </div>
 
       <label>*Data da visita</label>
-      <input type="date" required>
+      <input type="date" required class="form-control" id="validationCustom04">
 
-      <label>Turno</label>
-      <select>
+      <div class="valid-feedback">
+        Correto!
+      </div>
+      <div class="invalid-feedback">
+        Escolha uma data.
+      </div>
+
+      <label>*Período</label>
+      <select class="form-select" id="validationCustom05" required>
+        <option selected disabled value="">Escolha...</option>
         <option>Manhã</option>
         <option>Tarde</option>
       </select>
 
+      <div class="valid-feedback">
+        Correto!
+      </div>
+      <div class="invalid-feedback">
+        Selecione um período.
+      </div>
+
       <label>Observações</label>
       <textarea rows="4"></textarea>
 
-      <button type="submit">Agendar</button>
+      <button type="submit" id="agendar">Agendar</button>
     </form>
   </div>
+
+  <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/agendamento.js"></script>
 </body>
 
 </html>

@@ -1,143 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar Toyota</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #f9f9f9;
-    }
-
-    /* === Sidebar === */
-    .sidebar {
-      position: fixed;
-      top: 0; left: 0;
-      width: 260px;
-      height: 100%;
-      background: #fff;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-      z-index: 1000;
-    }
-    .sidebar.open {
-      transform: translateX(0);
-    }
-
-    /* Logo */
-    .sidebar .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 2rem;
-    }
-    .sidebar .logo img {
-      width: 40px;
-    }
-    .sidebar .logo span {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #e30613;
-      letter-spacing: 1px;
-    }
-
-    /* Links */
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sidebar ul li {
-      margin: 0.8rem 0;
-    }
-    .sidebar ul li a {
-      display: block;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      padding: 0.6rem 0.5rem;
-      border-radius: 6px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    .sidebar ul li a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 0;
-      background: #e30613;
-      transition: width 0.3s ease;
-    }
-    .sidebar ul li a:hover {
-      background: #f9f9f9;
-      color: #e30613;
-    }
-    .sidebar ul li a:hover::after {
-      width: 100%;
-    }
-
-    /* Botão de fechar */
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #666;
-      transition: color 0.3s;
-    }
-    .close-btn:hover {
-      color: #e30613;
-    }
-
-    /* Botão de abrir */
-    .open-btn {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      font-size: 1.5rem;
-      background: #e30613;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-      cursor: pointer;
-      z-index: 1100;
-    }
-  </style>
+  <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
 </head>
+
 <body>
-  <!-- Botão de abrir -->
-  <button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
-
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.png" alt="Toyota">
-      <span>TOYOTA</span>
+  <form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre a marca</a></li>
-      <li><a href="#">Sistema de produção</a></li>
-      <li><a href="#">Tudo sobre eletrificação</a></li>
-      <li><a href="#">Modelos disponíveis</a></li>
-      <li><a href="#">Toyota Tour</a></li>
-    </ul>
-  </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+          required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="validationCustom05" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
 
+  <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("open");
-    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
   </script>
 </body>
+
 </html>
