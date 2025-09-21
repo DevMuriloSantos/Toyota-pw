@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
+
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icons-1.13.1/icons-1.13.1/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
     <title>Home</title>
 </head>
 
-<body>
+<body id="body-main">
     <header>
-        <nav class="navbar navbar-dark fixed-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-dark fixed-top navbar-main">
+            <div class="container-fluid justify-content-end">
                 <img id="logo" src="img/toyota-logo-red.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -54,11 +57,78 @@
                         </ul>
                     </div>
                 </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-person-add" id="add_user" viewBox="0 0 16 16">
+                    <path
+                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                    <path
+                        d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
+                </svg>
             </div>
+
         </nav>
     </header>
 
     <main>
+        <!--CADASTRO-->
+        <div id="cadastro">
+            <div id="form_cadastro">
+                <!-- <h1>Que bom que você voltou!</h1>
+                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
+                <button type="submit" id="poster_entrar">Entrar</button>
+                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
+                <button id="poster_desconectar">Permanecer desconectado</button> -->
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email" placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login" id="senha" placeholder="">
+                        <i class="bi bi-eye" id="toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Esqueci minha senha ?</a>
+                        </div>
+                    </div>
+                    <button class="entrar">Entrar</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                </div>
+                <p class="signup">Não tem uma conta?
+                    <a rel="noopener noreferrer" href="#" class="">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
 
         <div id="poster-login">
             <div id="poster">
@@ -113,8 +183,10 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <picture>
-                        <source srcset="https://media.toyota.com.ar/eebfa5b9-c20a-460c-9eee-59f78264baba.jpeg" media="(min-width: 1080px)">
-                        <img src="https://media.toyota.com.ar/284748dc-49b7-4e3c-bb65-20681f3ea4a6.jpeg" class="d-block w-100 carousel-image" alt="...">
+                        <source srcset="https://media.toyota.com.ar/eebfa5b9-c20a-460c-9eee-59f78264baba.jpeg"
+                            media="(min-width: 1080px)">
+                        <img src="https://media.toyota.com.ar/284748dc-49b7-4e3c-bb65-20681f3ea4a6.jpeg"
+                            class="d-block w-100 carousel-image" alt="...">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Serviços Toyota</h5>
@@ -123,8 +195,10 @@
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/2b1f120b-fad2-4f00-988b-e5005a67c4c2.jpeg" media="(min-width: 1080px)">
-                        <img src="https://media.toyota.com.br/9e54dc06-7a42-432a-be5d-997f1889c300.jpeg" class="d-block w-100 carousel-image" alt="...">
+                        <source srcset="https://media.toyota.com.br/2b1f120b-fad2-4f00-988b-e5005a67c4c2.jpeg"
+                            media="(min-width: 1080px)">
+                        <img src="https://media.toyota.com.br/9e54dc06-7a42-432a-be5d-997f1889c300.jpeg"
+                            class="d-block w-100 carousel-image" alt="...">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Blindagem Certificada</h5>
@@ -133,20 +207,25 @@
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/50908d54-d83e-44df-93a7-d5c87b94e560.jpeg" media="(min-width: 1080px)">
+                        <source srcset="https://media.toyota.com.br/50908d54-d83e-44df-93a7-d5c87b94e560.jpeg"
+                            media="(min-width: 1080px)">
 
-                        <img src="https://media.toyota.com.br/cfa79f83-a26b-4089-bd1e-f2ccb568bbee.jpeg" alt="" class="d-block w-100 carousel-image">
+                        <img src="https://media.toyota.com.br/cfa79f83-a26b-4089-bd1e-f2ccb568bbee.jpeg" alt=""
+                            class="d-block w-100 carousel-image">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>HIACE</h5>
-                        <p>Chegou a Toyota Hiace 2025, combinando espaço, eficiência e conforto para o seu transporte.</p>
+                        <p>Chegou a Toyota Hiace 2025, combinando espaço, eficiência e conforto para o seu transporte.
+                        </p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/f54bb414-0608-42fe-9660-0c67cd157107.jpeg" media="(min-width: 1080px)">
+                        <source srcset="https://media.toyota.com.br/f54bb414-0608-42fe-9660-0c67cd157107.jpeg"
+                            media="(min-width: 1080px)">
 
-                        <img src="https://media.toyota.com.br/f54bb414-0608-42fe-9660-0c67cd157107.jpeg" alt="" class="d-block w-100 carousel-image">
+                        <img src="https://media.toyota.com.br/f54bb414-0608-42fe-9660-0c67cd157107.jpeg" alt=""
+                            class="d-block w-100 carousel-image">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Toyota 10</h5>
@@ -155,9 +234,11 @@
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/9b04030d-9e07-48fa-9c92-9d638467c6d4.png" media="(min-width: 1080px)">
+                        <source srcset="https://media.toyota.com.br/9b04030d-9e07-48fa-9c92-9d638467c6d4.png"
+                            media="(min-width: 1080px)">
 
-                        <img src="https://media.toyota.com.br/998b4b41-8f6a-4d4a-bcf2-c4bc8b3c9117.png" alt="" class="d-block w-100 carousel-image">
+                        <img src="https://media.toyota.com.br/998b4b41-8f6a-4d4a-bcf2-c4bc8b3c9117.png" alt=""
+                            class="d-block w-100 carousel-image">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Revisão Facilitada Toyota</h5>
@@ -166,9 +247,11 @@
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/388ab89e-7d08-4535-8a6b-19c262a0ed0d.png" media="(min-width: 1080px)">
+                        <source srcset="https://media.toyota.com.br/388ab89e-7d08-4535-8a6b-19c262a0ed0d.png"
+                            media="(min-width: 1080px)">
 
-                        <img src="https://media.toyota.com.br/debe1a2b-2128-49b1-9773-6b3aebdf5595.png" alt="" class="d-block w-100 carousel-image">
+                        <img src="https://media.toyota.com.br/debe1a2b-2128-49b1-9773-6b3aebdf5595.png" alt=""
+                            class="d-block w-100 carousel-image">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Seminovos Certificados</h5>
@@ -177,9 +260,11 @@
                 </div>
                 <div class="carousel-item">
                     <picture>
-                        <source srcset="https://media.toyota.com.br/dd4dcd08-20d0-4981-9d74-c660f6fe1c1c.jpeg" media="(min-width: 1080px)">
+                        <source srcset="https://media.toyota.com.br/dd4dcd08-20d0-4981-9d74-c660f6fe1c1c.jpeg"
+                            media="(min-width: 1080px)">
 
-                        <img src="https://media.toyota.com.br/3d75e582-de2b-4b11-b909-fe7996ecd5f4.jpeg" alt="" class="d-block w-100 carousel-image">
+                        <img src="https://media.toyota.com.br/3d75e582-de2b-4b11-b909-fe7996ecd5f4.jpeg" alt=""
+                            class="d-block w-100 carousel-image">
                     </picture>
                     <div class="carousel-caption d-md-block">
                         <h5>Serviços Conectados Toyota</h5>

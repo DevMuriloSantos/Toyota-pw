@@ -4,13 +4,14 @@
     box-sizing: border-box;
 }
 
-body {
+#body-main {
     overflow-y: hidden;
 }
 
 #logo {
     width: 150px;
     height: auto;
+    margin: auto;
 
 }
 
@@ -91,11 +92,19 @@ main>h1 h2 {
 
 .fixed-top {
     background-color: white;
+}
+
+.navbar-main {
     z-index: 0 !important;
 }
 
-.fixed-top.zIndex {
+.navbar-main.zIndex {
     z-index: 1030 !important;
+}
+
+.bi-person-add {
+    font-size: 2rem;
+    color: #EB0A1E;
 }
 
 .navbar {
