@@ -73,28 +73,24 @@
         <!--CADASTRO-->
         <div id="cadastro">
             <div id="form_cadastro">
-                <!-- <h1>Que bom que você voltou!</h1>
-                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
-                <button type="submit" id="poster_entrar">Entrar</button>
-                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
-                <button id="poster_desconectar">Permanecer desconectado</button> -->
-            </div>
-        </div>
+                <i class="bi bi-x-circle"></i>
 
-        <!--LOGIN-->
-        <div id="login">
-            <div id="form_login">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-x-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                </svg>
-                <p class="title">Login</p>
+                <p class="title">Cadastro</p>
                 <form class="form needs-validation" novalidate>
                     <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" required class="inp-login" id="email" placeholder="teste@gmail.com">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" required class="inp-login" id="nome" placeholder="">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email_cadastro">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_cadastro" placeholder="teste@gmail.com">
                         <div class="valid-feedback">
                             Correto!
                         </div>
@@ -104,9 +100,56 @@
                     </div>
 
                     <div class="input-group senha-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" name="senha" required class="inp-login" id="senha" placeholder="">
-                        <i class="bi bi-eye" id="toggleSenha" style="cursor:pointer"></i>
+
+                        <label for="cadastro_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="cadastro_senha" placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <div class="input-group senha-group">
+
+                        <label for="confirm_senha">Confirmar senha</label>
+                        <input type="password" name="confirm_senha" required class="inp-login senha" id="confirm_senha" placeholder="">
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <button class="cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <i class="bi bi-x-circle"></i>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email_login">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_login" placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="inp_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha" placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
 
                         <div class="valid-feedback">
                             Correto!
@@ -125,7 +168,7 @@
                     <div class="line"></div>
                 </div>
                 <p class="signup">Não tem uma conta?
-                    <a rel="noopener noreferrer" href="#" class="">Cadastre-se</a>
+                    <a rel="noopener noreferrer" href="#" class="login_cadastrar">Cadastre-se</a>
                 </p>
             </div>
         </div>

@@ -12,8 +12,12 @@ let permanecer_deconectado = false
 const add_user = document.getElementById('add_user');
 const login = document.getElementById('login');
 const cadastro = document.getElementById('cadastro');
-const senhaInput = document.getElementById('senha');
-const toggleSenha = document.getElementById('toggleSenha');
+const senhaInput = document.querySelectorAll('.senha');
+const toggleSenha = document.querySelectorAll('.toggleSenha');
+const btn_close_login = document.getElementsByClassName('bi-x-circle')[1];
+
+const login_cadastrar = document.getElementsByClassName('login_cadastrar')[0];
+const btn_close_cadastrar = document.getElementsByClassName('bi-x-circle')[0];
 
 for (let i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i) === 'Login') {
@@ -34,6 +38,13 @@ poster_entrar.addEventListener('click', () => {
     poster_login.style.display = 'none';
 });
 
+poster_cadastrar.addEventListener('click', () => {
+    body_main.style.overflowY = 'hidden'
+    nav.classList.remove('zIndex');
+    cadastro.style.display = 'flex';
+    poster_login.style.display = 'none';
+});
+
 poster_desconectar.addEventListener('click', () => {
     permanecer_deconectado = true
     localStorage.setItem('Login', permanecer_deconectado)
@@ -42,6 +53,13 @@ poster_desconectar.addEventListener('click', () => {
     poster_login.style.display = 'none';
 
     navbar_main.classList.add('zIndex')
+});
+
+login_cadastrar.addEventListener('click', () => {
+    body_main.style.overflowY = 'hidden'
+    nav.classList.remove('zIndex');
+    cadastro.style.display = 'flex';
+    login.style.display = 'none';
 });
 
 add_user.addEventListener('click', () => {
@@ -59,20 +77,37 @@ add_user.addEventListener('click', () => {
     });
 });
 
-toggleSenha.addEventListener('click', function () {
-    const tipoAtual = senhaInput.getAttribute('type');
-    if (tipoAtual === 'password') {
-        senhaInput.setAttribute('type', 'text');
-        this.classList.remove('bi-eye');
-        this.classList.add('bi-eye-slash');
-    } else {
-        senhaInput.setAttribute('type', 'password');
-        this.classList.remove('bi-eye-slash');
-        this.classList.add('bi-eye');
-    }
+toggleSenha.forEach((toggleSenha) => {
+    toggleSenha.addEventListener('click', function () {
+
+        senhaInput.forEach((senhaInput) => {
+            const tipoAtual = senhaInput.getAttribute('type');
+
+            if (tipoAtual === 'password') {
+                senhaInput.setAttribute('type', 'text');
+                this.classList.remove('bi-eye');
+                this.classList.add('bi-eye-slash');
+            } else {
+                senhaInput.setAttribute('type', 'password');
+                this.classList.remove('bi-eye-slash');
+                this.classList.add('bi-eye');
+            }
+        })
+    });
+})
+
+btn_close_login.addEventListener('click', () => {
+    body_main.style.overflowY = 'scroll'
+    nav.classList.add('zIndex');
+    login.style.display = 'none';
 });
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+btn_close_cadastrar.addEventListener('click', () => {
+    body_main.style.overflowY = 'scroll'
+    nav.classList.add('zIndex');
+    cadastro.style.display = 'none';
+});
+
 (() => {
     'use strict'
 
