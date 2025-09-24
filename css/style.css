@@ -102,9 +102,13 @@ main>h1 h2 {
     z-index: 1030 !important;
 }
 
-.bi-person-add {
+.bi-person-add, .bi-person-circle {
     font-size: 2rem;
     color: #EB0A1E;
+}
+
+#profile_icon {
+    display: none;
 }
 
 .navbar {
@@ -406,5 +410,9 @@ ul {
     .mapa-pequeno {
         width: 700px;
         height: 550px;
+    }
+
+    #form_login, #form_cadastro {
+        width: 58% !important;
     }
 }

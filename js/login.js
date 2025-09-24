@@ -1,3 +1,37 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBsCCDXpy23SCrCxhevYJw68dnemI79t5g",
+    authDomain: "toyota-pw.firebaseapp.com",
+    projectId: "toyota-pw",
+    storageBucket: "toyota-pw.firebasestorage.app",
+    messagingSenderId: "455946337849",
+    appId: "1:455946337849:web:83a51f4f7accf70a7d57e8",
+    measurementId: "G-QN74JGRDEM"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics();
+const auth = getAuth();
+
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // Usuário está logado
+        add_user.style.display = 'none';
+        profile_icon.style.display = 'block';
+
+        alert(`Bem vindo de volta ${user.displayName}`)
+    } else {
+        // Usuário não está logado
+        add_user.style.display = 'block';
+        profile_icon.style.display = 'none';
+    }
+});
+
+
 // poster login
 const body_main = document.getElementById('body-main');
 const poster_entrar = document.getElementById('poster_entrar');
@@ -10,6 +44,9 @@ let permanecer_deconectado = false
 
 // login e cadastro
 const add_user = document.getElementById('add_user');
+const profile_icon = document.getElementById('profile_icon');
+const profile = document.getElementById('profile');
+const dropdownMenu = document.getElementById("dropdownMenu");
 const login = document.getElementById('login');
 const cadastro = document.getElementById('cadastro');
 const senhaInput = document.querySelectorAll('.senha');
@@ -20,8 +57,10 @@ const login_cadastrar = document.getElementsByClassName('login_cadastrar')[0];
 const btn_close_cadastrar = document.getElementsByClassName('bi-x-circle')[0];
 
 for (let i = 0; i < localStorage.length; i++) {
+
     if (localStorage.key(i) === 'Login') {
         permanecer_deconectado = localStorage.getItem(localStorage.key(i))
+
         if (permanecer_deconectado == 'false' || permanecer_deconectado == 'true') {
             poster_login.style.display = 'none';
 
@@ -77,6 +116,10 @@ add_user.addEventListener('click', () => {
     });
 });
 
+profile_icon.addEventListener('click', () => {
+    profile.style.display = 'block';
+})
+
 toggleSenha.forEach((toggleSenha) => {
     toggleSenha.addEventListener('click', function () {
 
@@ -126,20 +169,59 @@ btn_close_cadastrar.addEventListener('click', () => {
             event.preventDefault()
 
             const entrar = document.getElementsByClassName('entrar')[0];
+            const btn_cadastrar = document.getElementsByClassName('cadastrar')[0];
+
+            // realizar login
             entrar.addEventListener('click', () => {
-                document.querySelectorAll('.inp-login').forEach(input => {
-                    input.value = '';
+                const email_login = document.getElementById('email_login').value;
+                const senha_login = document.getElementById('inp_senha').value;
+
+                // tudo abaixo é uma promise
+                signInWithEmailAndPassword(auth, email_login, senha_login).then((userCredential) => {
+                    const user = userCredential.user;
+                    alert('Login realizado com sucesso!')
+                    console.log('success', userCredential)
+                    console.log(user)
+
+                    document.querySelectorAll('.inp-login').forEach(input => {
+                        input.value = '';
+                    })
+                    body_main.style.overflowY = 'scroll'
+                    nav.classList.add('zIndex');
+                    login.style.display = 'none';
+
+                    add_user.style.display = 'none';
+                    profile_icon.style.display = 'block';
+
+                }).catch(error => {
+                    const errorMessage = error.message;
+                    alert(errorMessage)
                 })
-                body_main.style.overflowY = 'scroll'
-                nav.classList.add('zIndex');
-                login.style.display = 'none';
             });
 
-            /* const data = document.getElementById('validationCustom04');
-            const valorData = data.value;
-            console.log(valorData);
-            alert('Agendamento realizado com sucesso!')
-            window.location.href = 'index.html' */
+            btn_cadastrar.addEventListener('click', () => {
+                const nome_cadastro = document.getElementById('nome').value;
+                const email_cadastro = document.getElementById('email_cadastro').value;
+                const confirm_senha_cadastro = document.getElementById('confirm_senha').value;
+
+                createUserWithEmailAndPassword(auth, email_cadastro, confirm_senha_cadastro)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        updateProfile(user, { displayName: nome_cadastro })
+                            .then(() => {
+                                alert('Cadastro realizado com sucesso!');
+                                // Limpar campos, fechar modal etc.
+                            })
+                            .catch((error) => {
+                                alert('Erro ao salvar nome: ' + error.message);
+                            });
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                    });
+            });
+
+            /* window.location.href = 'index.html' */
         }, false)
     })
 })()

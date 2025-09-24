@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -57,19 +57,25 @@
                         </ul>
                     </div>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                    class="bi bi-person-add" id="add_user" viewBox="0 0 16 16">
-                    <path
-                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                    <path
-                        d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
-                </svg>
+                <i class="bi bi-person-add" id="add_user"></i>
+                <i class="bi bi-person-circle" id="profile_icon"></i>
             </div>
 
         </nav>
     </header>
 
     <main>
+
+        <!-- Se estiver logado -->
+        <div class="profile" id="profile" style="display:block;">
+            <img src="https://i.pravatar.cc/100" alt="Avatar">
+            <div class="dropdown" id="dropdownMenu">
+                <a href="#">Meu Perfil</a>
+                <a href="#">Configurações</a>
+                <a href="#" id="logout">Sair</a>
+            </div>
+        </div>
+
         <!--CADASTRO-->
         <div id="cadastro">
             <div id="form_cadastro">
@@ -79,7 +85,7 @@
                 <form class="form needs-validation" novalidate>
                     <div class="input-group">
                         <label for="nome">Nome completo</label>
-                        <input type="text" name="nome" required class="inp-login" id="nome" placeholder="">
+                        <input type="text" name="nome" required class="inp-cadastrar" id="nome" placeholder="">
                         <div class="valid-feedback">
                             Correto!
                         </div>
@@ -90,7 +96,8 @@
 
                     <div class="input-group">
                         <label for="email_cadastro">E-mail</label>
-                        <input type="email" name="email" required class="inp-login" id="email_cadastro" placeholder="teste@gmail.com">
+                        <input type="email" name="email" required class="inp-cadastrar" id="email_cadastro"
+                            placeholder="teste@gmail.com">
                         <div class="valid-feedback">
                             Correto!
                         </div>
@@ -102,8 +109,9 @@
                     <div class="input-group senha-group">
 
                         <label for="cadastro_senha">Senha</label>
-                        <input type="password" name="senha" required class="inp-login senha" id="cadastro_senha" placeholder="">
-                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+                        <input type="password" name="senha" required class="inp-cadastrar senha" id="cadastro_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" id="bi_eye" style="cursor:pointer"></i>
 
                         <div class="valid-feedback">
                             Correto!
@@ -115,7 +123,8 @@
                     <div class="input-group senha-group">
 
                         <label for="confirm_senha">Confirmar senha</label>
-                        <input type="password" name="confirm_senha" required class="inp-login senha" id="confirm_senha" placeholder="">
+                        <input type="password" name="confirm_senha" required class="inp-cadastrar senha"
+                            id="confirm_senha" placeholder="">
 
                         <div class="valid-feedback">
                             Correto!
@@ -137,7 +146,8 @@
                 <form class="form needs-validation" novalidate>
                     <div class="input-group">
                         <label for="email_login">E-mail</label>
-                        <input type="email" name="email" required class="inp-login" id="email_login" placeholder="teste@gmail.com">
+                        <input type="email" name="email" required class="inp-login" id="email_login"
+                            placeholder="teste@gmail.com">
                         <div class="valid-feedback">
                             Correto!
                         </div>
@@ -148,7 +158,8 @@
 
                     <div class="input-group senha-group">
                         <label for="inp_senha">Senha</label>
-                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha" placeholder="">
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha"
+                            placeholder="">
                         <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
 
                         <div class="valid-feedback">
@@ -329,7 +340,8 @@
     </main>
 
     <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/login.js" type="module"></script>
+    <!-- <script src="js/authentication_db.js" type="module"></script> -->
 </body>
 
 </html>
