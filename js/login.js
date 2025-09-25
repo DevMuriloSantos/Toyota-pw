@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
 
 const firebaseConfig = {
@@ -22,6 +22,10 @@ onAuthStateChanged(auth, (user) => {
         // Usuário está logado
         add_user.style.display = 'none';
         profile_icon.style.display = 'block';
+
+        if (user.displayName == null) {
+            return
+        }
 
         alert(`Bem vindo de volta ${user.displayName}`)
     } else {
@@ -52,6 +56,7 @@ const cadastro = document.getElementById('cadastro');
 const senhaInput = document.querySelectorAll('.senha');
 const toggleSenha = document.querySelectorAll('.toggleSenha');
 const btn_close_login = document.getElementsByClassName('bi-x-circle')[1];
+const logout = document.getElementById('logout');
 
 const login_cadastrar = document.getElementsByClassName('login_cadastrar')[0];
 const btn_close_cadastrar = document.getElementsByClassName('bi-x-circle')[0];
@@ -120,6 +125,16 @@ profile_icon.addEventListener('click', () => {
     profile.style.display = 'block';
 })
 
+document.addEventListener('mousedown', function (event) {
+    if (
+        profile.style.display === 'block' &&
+        !profile.contains(event.target) &&
+        event.target !== profile_icon
+    ) {
+        profile.style.display = 'none';
+    }
+});
+
 toggleSenha.forEach((toggleSenha) => {
     toggleSenha.addEventListener('click', function () {
 
@@ -149,6 +164,20 @@ btn_close_cadastrar.addEventListener('click', () => {
     body_main.style.overflowY = 'scroll'
     nav.classList.add('zIndex');
     cadastro.style.display = 'none';
+});
+
+logout.addEventListener('click', () => {
+    signOut(auth)
+        .then(() => {
+            alert('Aguarde um momento até que você seja desconectado...');
+            // Atualize a interface, se necessário
+            add_user.style.display = 'block';
+            profile_icon.style.display = 'none';
+            // Outras ações, como fechar modais, etc.
+        })
+        .catch((error) => {
+            alert('Erro ao sair: ' + error.message);
+        });
 });
 
 (() => {

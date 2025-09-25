@@ -168,7 +168,11 @@
 
 /* === Perfil === */
 .profile {
-    position: relative;
+    display: none;
+    position: fixed;
+    width: 30%;
+    left: 67%;
+    top: 10%;
 }
 
 .profile img {
@@ -199,5 +203,5 @@
 }
 
 .dropdown a:hover {
-    background: #f4f4f4;
+    background: rgb(204, 219, 238);
 }
