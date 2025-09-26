@@ -31,7 +31,7 @@ onAuthStateChanged(auth, (user) => {
 
             try {
                 await updateProfile(user, { displayName: nome_edit });
-                    await updateEmail(user, { email: email_edit});
+                    await updateEmail(email_edit});
                 alert('Perfil atualizado com sucesso!');
 
             } catch (error) {
