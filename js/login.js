@@ -22,12 +22,6 @@ onAuthStateChanged(auth, (user) => {
         // Usuário está logado
         add_user.style.display = 'none';
         profile_icon.style.display = 'block';
-
-        if (user.displayName == null) {
-            return
-        }
-
-        alert(`Bem vindo de volta ${user.displayName}`)
     } else {
         // Usuário não está logado
         add_user.style.display = 'block';

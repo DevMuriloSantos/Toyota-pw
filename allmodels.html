@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/model-cars.css">
     <link rel="stylesheet" href="css/modelos-cores.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@700&display=swap"
         rel="stylesheet">
@@ -16,9 +17,9 @@
     <title>Modelos</title>
 </head>
 
-<body>
+<body id="body-main">
     <header>
-        <nav class="navbar navbar-dark fixed-top">
+        <nav class="navbar navbar-dark fixed-top navbar-main">
             <div class="container-fluid">
                 <img id="logo" src="img/toyota-logo-red.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -60,11 +61,141 @@
                         </ul>
                     </div>
                 </div>
+
+                <i class="bi bi-person-add" id="add_user"></i>
+                <i class="bi bi-person-circle" id="profile_icon"></i>
             </div>
+
         </nav>
     </header>
 
     <main>
+
+        <!-- Se estiver logado -->
+        <div class="profile" id="profile">
+            <div class="dropdown" id="dropdownMenu">
+                <a href="perfil.html" target="_blank"><i class="bi bi-person-lines-fill"></i> Meu Perfil</a>
+                <a href="#" id="logout"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            </div>
+        </div>
+
+        <!--CADASTRO-->
+        <div id="cadastro">
+            <div id="form_cadastro">
+                <i class="bi bi-x-circle"></i>
+
+                <p class="title">Cadastro</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" required class="inp-cadastrar" id="nome" placeholder="">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email_cadastro">E-mail</label>
+                        <input type="email" name="email" required class="inp-cadastrar" id="email_cadastro"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+
+                        <label for="cadastro_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-cadastrar senha" id="cadastro_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" id="bi_eye" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <div class="input-group senha-group">
+
+                        <label for="confirm_senha">Confirmar senha</label>
+                        <input type="password" name="confirm_senha" required class="inp-cadastrar senha"
+                            id="confirm_senha" placeholder="">
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <button class="cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <i class="bi bi-x-circle"></i>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email_login">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_login"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="inp_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Esqueci minha senha ?</a>
+                        </div>
+                    </div>
+                    <button class="entrar">Entrar</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                </div>
+                <p class="signup">Não tem uma conta?
+                    <a rel="noopener noreferrer" href="#" class="login_cadastrar">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="poster-login">
+            <div id="poster">
+                <h1>Que bom que você voltou!</h1>
+                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
+                <button type="submit" id="poster_entrar">Entrar</button>
+                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
+                <button id="poster_desconectar">Permanecer desconectado</button>
+            </div>
+        </div>
         <h1>Explore todos os modelos</h1>
 
         <nav class="nav-categories">
@@ -139,7 +270,8 @@
                 <p id="corolla_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -159,7 +291,8 @@
                 <p id="corolla_cross_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_cross_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>SW4</h2>
                 <img src="img/sw4-lado.png" alt="Imagem normal" class="image-model sw4">
@@ -175,7 +308,8 @@
                 <p id="sw4_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="sw4_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>RAV4</h2>
                 <img src="img/rav4-lado.png" alt="" class="image-model rav4">
@@ -191,7 +325,8 @@
                 <p id="rav4_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="rav4_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -203,31 +338,40 @@
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Preto-Eclipse btn-cores btn-cores-corolla-hybrid" id="cor1_corolla-hybrid"></button></li>
-                    <li><button class="Prata-Supernova btn-cores btn-cores-corolla-hybrid" id="cor2_corolla-hybrid"></button></li>
-                    <li><button class="Cinza-Granito btn-cores btn-cores-corolla-hybrid" id="cor3_corolla-hybrid"></button></li>
+                    <li><button class="Preto-Eclipse btn-cores btn-cores-corolla-hybrid"
+                            id="cor1_corolla-hybrid"></button></li>
+                    <li><button class="Prata-Supernova btn-cores btn-cores-corolla-hybrid"
+                            id="cor2_corolla-hybrid"></button></li>
+                    <li><button class="Cinza-Granito btn-cores btn-cores-corolla-hybrid"
+                            id="cor3_corolla-hybrid"></button></li>
                 </ul>
 
                 <p id="corolla_hybrid_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_hybrid_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>Corolla Cross Hybrid</h2>
-                <img src="img/corolla-cross-hybrid-lado.png" alt="Imagem normal" class="image-model corolla-cross-hybrid">
+                <img src="img/corolla-cross-hybrid-lado.png" alt="Imagem normal"
+                    class="image-model corolla-cross-hybrid">
 
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Azul-Topazio btn-cores btn-cores-corolla-cross-hybrid" id="cor1_corolla-cross-hybrid"></button></li>
-                    <li><button class="Prata-Lua-Nova btn-cores btn-cores-corolla-cross-hybrid" id="cor2_corolla-cross-hybrid"></button></li>
-                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-cross-hybrid" id="cor3_corolla-cross-hybrid"></button></li>
+                    <li><button class="Azul-Topazio btn-cores btn-cores-corolla-cross-hybrid"
+                            id="cor1_corolla-cross-hybrid"></button></li>
+                    <li><button class="Prata-Lua-Nova btn-cores btn-cores-corolla-cross-hybrid"
+                            id="cor2_corolla-cross-hybrid"></button></li>
+                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-cross-hybrid"
+                            id="cor3_corolla-cross-hybrid"></button></li>
                 </ul>
 
                 <p id="corolla_cross_hybrid_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_cross_hybrid_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>RAV4 Plug-in Hybrid</h2>
                 <img src="img/RAV4-Plug-in Hybrid-lado.png" alt="" class="image-model rav4-hybrid">
@@ -235,15 +379,19 @@
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Vermelho-Emoção-Preto btn-cores btn-cores-rav4-hybrid" id="cor1_rav4-hybrid"></button></li>
-                    <li><button class="Azul-Topazio btn-cores btn-cores-rav4-hybrid" id="cor2_rav4-hybrid"></button></li>
-                    <li><button class="Cinza-Metalizado btn-cores btn-cores-rav4-hybrid" id="cor3_rav4-hybrid"></button></li>
+                    <li><button class="Vermelho-Emoção-Preto btn-cores btn-cores-rav4-hybrid"
+                            id="cor1_rav4-hybrid"></button></li>
+                    <li><button class="Azul-Topazio btn-cores btn-cores-rav4-hybrid" id="cor2_rav4-hybrid"></button>
+                    </li>
+                    <li><button class="Cinza-Metalizado btn-cores btn-cores-rav4-hybrid" id="cor3_rav4-hybrid"></button>
+                    </li>
                 </ul>
 
                 <p id="rav4_hybrid_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="rav4_hybrid_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -255,30 +403,38 @@
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Preto-Atitude btn-cores btn-cores-hilux-cabine-dupla" id="cor1_hilux-cabine-dupla"></button></li>
-                    <li><button class="Cinza-Granito btn-cores btn-cores-hilux-cabine-dupla" id="cor2_hilux-cabine-dupla"></button></li>
-                    <li><button class="Vermelho-Volcano btn-cores btn-cores-hilux-cabine-dupla" id="cor3_hilux-cabine-dupla"></button></li>
+                    <li><button class="Preto-Atitude btn-cores btn-cores-hilux-cabine-dupla"
+                            id="cor1_hilux-cabine-dupla"></button></li>
+                    <li><button class="Cinza-Granito btn-cores btn-cores-hilux-cabine-dupla"
+                            id="cor2_hilux-cabine-dupla"></button></li>
+                    <li><button class="Vermelho-Volcano btn-cores btn-cores-hilux-cabine-dupla"
+                            id="cor3_hilux-cabine-dupla"></button></li>
                 </ul>
 
                 <p id="hilux_cabine_dupla_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="hilux_cabine_dupla_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>Hilux Cabine Simples</h2>
-                <img src="img/hilux-cabine-simples-lado.png" alt="Imagem normal" class="image-model hilux-cabine-simples">
+                <img src="img/hilux-cabine-simples-lado.png" alt="Imagem normal"
+                    class="image-model hilux-cabine-simples">
 
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Branco-Polar btn-cores btn-cores-hilux-cabine-simples" id="cor1_hilux-cabine-simples"></button></li>
-                    <li><button class="Prata-Argentum btn-cores btn-cores-hilux-cabine-simples" id="cor2_hilux-cabine-simples"></button></li>
+                    <li><button class="Branco-Polar btn-cores btn-cores-hilux-cabine-simples"
+                            id="cor1_hilux-cabine-simples"></button></li>
+                    <li><button class="Prata-Argentum btn-cores btn-cores-hilux-cabine-simples"
+                            id="cor2_hilux-cabine-simples"></button></li>
                 </ul>
 
                 <p id="hilux_cabine_simples_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="hilux_cabine_simples_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -296,7 +452,8 @@
                 <p id="hiace_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="hiace_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -310,13 +467,15 @@
                 <ul>
                     <li><button class="Solid-Black btn-cores btn-cores-gr-corolla" id="cor1_gr-corolla"></button></li>
                     <li><button class="Emotional-Red btn-cores btn-cores-gr-corolla" id="cor2_gr-corolla"></button></li>
-                    <li><button class="Precious-Metal btn-cores btn-cores-gr-corolla" id="cor3_gr-corolla"></button></li>
+                    <li><button class="Precious-Metal btn-cores btn-cores-gr-corolla" id="cor3_gr-corolla"></button>
+                    </li>
                 </ul>
 
                 <p id="gr_corolla_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="gr_corolla_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>Corolla GR-Sport</h2>
                 <img src="img/corolla-gr-sport-lado.png" alt="Imagem normal" class="image-model corolla-gr-sport">
@@ -324,31 +483,40 @@
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-gr-sport" id="cor1_corolla-gr-sport"></button></li>
-                    <li><button class="Preto-Eclipse btn-cores btn-cores-corolla-gr-sport" id="cor2_corolla-gr-sport"></button></li>
-                    <li><button class="Branco-Lunar btn-cores btn-cores-corolla-gr-sport" id="cor3_corolla-gr-sport"></button></li>
+                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-gr-sport"
+                            id="cor1_corolla-gr-sport"></button></li>
+                    <li><button class="Preto-Eclipse btn-cores btn-cores-corolla-gr-sport"
+                            id="cor2_corolla-gr-sport"></button></li>
+                    <li><button class="Branco-Lunar btn-cores btn-cores-corolla-gr-sport"
+                            id="cor3_corolla-gr-sport"></button></li>
                 </ul>
 
                 <p id="corolla_gr_sport_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_gr_sport_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
 
                 <h2>Corolla Cross GR-Sport</h2>
-                <img src="img/corolla-cross-gr-sport-lado.png" alt="Imagem normal" class="image-model corolla-cross-gr-sport">
+                <img src="img/corolla-cross-gr-sport-lado.png" alt="Imagem normal"
+                    class="image-model corolla-cross-gr-sport">
 
                 <p>Selecione a cor</p>
 
                 <ul>
-                    <li><button class="Preto-Infinito btn-cores btn-cores-corolla-cross-gr-sport" id="cor1_corolla-cross-gr-sport"></button></li>
-                    <li><button class="Branco-Lunar btn-cores btn-cores-corolla-cross-gr-sport" id="cor2_corolla-cross-gr-sport"></button></li>
-                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-cross-gr-sport" id="cor3_corolla-cross-gr-sport"></button></li>
+                    <li><button class="Preto-Infinito btn-cores btn-cores-corolla-cross-gr-sport"
+                            id="cor1_corolla-cross-gr-sport"></button></li>
+                    <li><button class="Branco-Lunar btn-cores btn-cores-corolla-cross-gr-sport"
+                            id="cor2_corolla-cross-gr-sport"></button></li>
+                    <li><button class="Vermelho-Granada btn-cores btn-cores-corolla-cross-gr-sport"
+                            id="cor3_corolla-cross-gr-sport"></button></li>
                 </ul>
 
                 <p id="corolla_cross_gr_sport_cor"></p>
                 <p class="valores">A partir de:</p>
                 <h2 id="corolla_cross_gr_sport_preco" class="preco"></h2>
-                <button class="btn-comprar"><a href="https://www.toyota.com.br/" style="color: white; text-decoration: none;">Eu quero</a></button>
+                <button class="btn-comprar"><a href="https://www.toyota.com.br/"
+                        style="color: white; text-decoration: none;">Eu quero</a></button>
             </div>
         </div>
 
@@ -358,6 +526,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/cores.js"></script>
+    <script src="js/login.js" type="module"></script>
 </body>
 
 </html>

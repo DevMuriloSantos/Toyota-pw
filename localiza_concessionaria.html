@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/concessionarias.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
 
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
     <title>Concessionárias</title>
 </head>
 
-<body>
+<body id="body-main">
 
     <header>
-        <nav class="navbar navbar-dark fixed-top">
+        <nav class="navbar navbar-dark fixed-top navbar-main">
             <div class="container-fluid">
                 <img id="logo" src="img/toyota-logo-red.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -57,11 +58,141 @@
                         </ul>
                     </div>
                 </div>
+
+                <i class="bi bi-person-add" id="add_user"></i>
+                <i class="bi bi-person-circle" id="profile_icon"></i>
             </div>
+
         </nav>
     </header>
-    
+
     <main>
+
+        <!-- Se estiver logado -->
+        <div class="profile" id="profile">
+            <div class="dropdown" id="dropdownMenu">
+                <a href="perfil.html" target="_blank"><i class="bi bi-person-lines-fill"></i> Meu Perfil</a>
+                <a href="#" id="logout"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            </div>
+        </div>
+
+        <!--CADASTRO-->
+        <div id="cadastro">
+            <div id="form_cadastro">
+                <i class="bi bi-x-circle"></i>
+
+                <p class="title">Cadastro</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" required class="inp-cadastrar" id="nome" placeholder="">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email_cadastro">E-mail</label>
+                        <input type="email" name="email" required class="inp-cadastrar" id="email_cadastro"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+
+                        <label for="cadastro_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-cadastrar senha" id="cadastro_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" id="bi_eye" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <div class="input-group senha-group">
+
+                        <label for="confirm_senha">Confirmar senha</label>
+                        <input type="password" name="confirm_senha" required class="inp-cadastrar senha"
+                            id="confirm_senha" placeholder="">
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <button class="cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <i class="bi bi-x-circle"></i>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email_login">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_login"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="inp_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Esqueci minha senha ?</a>
+                        </div>
+                    </div>
+                    <button class="entrar">Entrar</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                </div>
+                <p class="signup">Não tem uma conta?
+                    <a rel="noopener noreferrer" href="#" class="login_cadastrar">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="poster-login">
+            <div id="poster">
+                <h1>Que bom que você voltou!</h1>
+                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
+                <button type="submit" id="poster_entrar">Entrar</button>
+                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
+                <button id="poster_desconectar">Permanecer desconectado</button>
+            </div>
+        </div>
         <h1>Localize uma concessionária</h1>
 
         <div class="selects">
@@ -98,14 +229,14 @@
                 <span class="borda-card"></span>
 
                 <h2>Serviços oferecidos</h2>
-                    <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
-                    <p>Preço fechado</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
-                    <p>Recall</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
-                    <p>Revisões periódicas</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
-                    <p>Elegibilidade Toyota 10</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
+                <p>Preço fechado</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
+                <p>Recall</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
+                <p>Revisões periódicas</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
+                <p>Elegibilidade Toyota 10</p>
             </div>
         </div>
 
@@ -127,13 +258,13 @@
                 <h2>Serviços oferecidos</h2>
 
                 <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
-                    <p>Preço fechado</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
-                    <p>Recall</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
-                    <p>Revisões periódicas</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
-                    <p>Elegibilidade Toyota 10</p>
+                <p>Preço fechado</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
+                <p>Recall</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
+                <p>Revisões periódicas</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
+                <p>Elegibilidade Toyota 10</p>
             </div>
         </div>
 
@@ -155,13 +286,13 @@
                 <h2>Serviços oferecidos</h2>
 
                 <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
-                    <p>Preço fechado</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
-                    <p>Recall</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
-                    <p>Revisões periódicas</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
-                    <p>Elegibilidade Toyota 10</p>
+                <p>Preço fechado</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
+                <p>Recall</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
+                <p>Revisões periódicas</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
+                <p>Elegibilidade Toyota 10</p>
             </div>
         </div>
 
@@ -183,38 +314,48 @@
                 <h2>Serviços oferecidos</h2>
 
                 <img class="img-servicos" src="img/concessionarias_servicos/preco-fechado.png" alt="">
-                    <p>Preço fechado</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
-                    <p>Recall</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
-                    <p>Revisões periódicas</p>
-                    <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
-                    <p>Elegibilidade Toyota 10</p>
+                <p>Preço fechado</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/recall.png" alt="">
+                <p>Recall</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/revisoes.png" alt="">
+                <p>Revisões periódicas</p>
+                <img class="img-servicos" src="img/concessionarias_servicos/toyota-10.png" alt="">
+                <p>Elegibilidade Toyota 10</p>
             </div>
         </div>
     </main>
-    
+
     <div class="mapa mapa-sorocaba">
         <iframe class="mapa-pequeno"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.915112238659!2d-47.432158389194974!3d-23.473913078771787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf601c5b2c8405%3A0x609fd3f1a45f9a9c!2sRamires%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238533628!5m2!1spt-BR!2sbr"
-        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.915112238659!2d-47.432158389194974!3d-23.473913078771787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf601c5b2c8405%3A0x609fd3f1a45f9a9c!2sRamires%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238533628!5m2!1spt-BR!2sbr"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="mapa mapa-sp">
-        <iframe class="mapa-pequeno" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.6968604380927!2d-46.660110089192614!3d-23.55523667871566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5833386ea607%3A0x9c851319c0f3be1b!2sConcession%C3%A1ria%20Toyota%20Collection%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238992903!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mapa-pequeno"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.6968604380927!2d-46.660110089192614!3d-23.55523667871566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5833386ea607%3A0x9c851319c0f3be1b!2sConcession%C3%A1ria%20Toyota%20Collection%20Motors!5e1!3m2!1spt-BR!2sbr!4v1758238992903!5m2!1spt-BR!2sbr"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="mapa mapa-jp">
-        <iframe class="mapa-pequeno" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.884304749379!2d-34.872716025086895!3d-7.119674792884048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace7917bf809fb%3A0x4081911d4b4fab8f!2sNewland%20Toyota%20-%20Jo%C3%A3o%20Pessoa%20PB!5e1!3m2!1spt-BR!2sbr!4v1758239428440!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mapa-pequeno"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.884304749379!2d-34.872716025086895!3d-7.119674792884048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace7917bf809fb%3A0x4081911d4b4fab8f!2sNewland%20Toyota%20-%20Jo%C3%A3o%20Pessoa%20PB!5e1!3m2!1spt-BR!2sbr!4v1758239428440!5m2!1spt-BR!2sbr"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="mapa mapa-cab">
-        <iframe class="mapa-pequeno" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2257767819283!2d-34.85120742508723!3d-7.079261592923604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acdd92feaf878f%3A0xb58ed83219890401!2sNewland%20Toyota%20-%20Cabedelo%20PB!5e1!3m2!1spt-BR!2sbr!4v1758240778587!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mapa-pequeno"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2257767819283!2d-34.85120742508723!3d-7.079261592923604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acdd92feaf878f%3A0xb58ed83219890401!2sNewland%20Toyota%20-%20Cabedelo%20PB!5e1!3m2!1spt-BR!2sbr!4v1758240778587!5m2!1spt-BR!2sbr"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/concessionarias.js"></script>
+    <script src="js/login.js" type="module"></script>
 </body>
 
 </html>

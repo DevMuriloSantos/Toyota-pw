@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
 
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
     <title>A marca Toyota</title>
 </head>
 
-<body>
+<body id="body-main">
 
     <header>
-        <nav class="navbar navbar-dark fixed-top">
+        <nav class="navbar navbar-dark fixed-top navbar-main">
             <div class="container-fluid">
                 <img id="logo" src="img/toyota-logo-red.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -56,29 +57,172 @@
                         </ul>
                     </div>
                 </div>
+
+                <i class="bi bi-person-add" id="add_user"></i>
+                <i class="bi bi-person-circle" id="profile_icon"></i>
             </div>
+
         </nav>
     </header>
 
     <main>
+
+        <!-- Se estiver logado -->
+        <div class="profile" id="profile">
+            <div class="dropdown" id="dropdownMenu">
+                <a href="perfil.html" target="_blank"><i class="bi bi-person-lines-fill"></i> Meu Perfil</a>
+                <a href="#" id="logout"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            </div>
+        </div>
+
+        <!--CADASTRO-->
+        <div id="cadastro">
+            <div id="form_cadastro">
+                <i class="bi bi-x-circle"></i>
+
+                <p class="title">Cadastro</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" required class="inp-cadastrar" id="nome" placeholder="">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email_cadastro">E-mail</label>
+                        <input type="email" name="email" required class="inp-cadastrar" id="email_cadastro"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+
+                        <label for="cadastro_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-cadastrar senha" id="cadastro_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" id="bi_eye" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <div class="input-group senha-group">
+
+                        <label for="confirm_senha">Confirmar senha</label>
+                        <input type="password" name="confirm_senha" required class="inp-cadastrar senha"
+                            id="confirm_senha" placeholder="">
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <button class="cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <i class="bi bi-x-circle"></i>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email_login">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_login"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="inp_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Esqueci minha senha ?</a>
+                        </div>
+                    </div>
+                    <button class="entrar">Entrar</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                </div>
+                <p class="signup">Não tem uma conta?
+                    <a rel="noopener noreferrer" href="#" class="login_cadastrar">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="poster-login">
+            <div id="poster">
+                <h1>Que bom que você voltou!</h1>
+                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
+                <button type="submit" id="poster_entrar">Entrar</button>
+                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
+                <button id="poster_desconectar">Permanecer desconectado</button>
+            </div>
+        </div>
         <h1>A Marca Toyota</h1>
-        <p>Em 2 de outubro de 1990, a Toyota Motor Corporation apresentou ao mundo o novo símbolo da marca. Esse emblema simboliza as características avançadas e a confiabilidade do produto e, hoje em dia, é utilizado em todos os novos modelos Toyota.</p>
-        <p>O desenho consiste em três elipses entrelaçadas. Em termos geométricos, uma elipse possui dois pontos centrais: um deles é o coração de nossos clientes e o outro é o coração do nosso produto.</p>
-        <p>A elipse maior unifica os dois corações. A combinação das elipses vertical e horizontal simboliza o “T” de Toyota. O espaço do fundo representa o contínuo avanço do desenvolvimento tecnológico da Toyota e as ilimitadas oportunidades à nossa frente.</p>
+        <p>Em 2 de outubro de 1990, a Toyota Motor Corporation apresentou ao mundo o novo símbolo da marca. Esse emblema
+            simboliza as características avançadas e a confiabilidade do produto e, hoje em dia, é utilizado em todos os
+            novos modelos Toyota.</p>
+        <p>O desenho consiste em três elipses entrelaçadas. Em termos geométricos, uma elipse possui dois pontos
+            centrais: um deles é o coração de nossos clientes e o outro é o coração do nosso produto.</p>
+        <p>A elipse maior unifica os dois corações. A combinação das elipses vertical e horizontal simboliza o “T” de
+            Toyota. O espaço do fundo representa o contínuo avanço do desenvolvimento tecnológico da Toyota e as
+            ilimitadas oportunidades à nossa frente.</p>
 
         <h2>Princípios da Toyota</h2>
         <ul class="sobre_marca">
-            <li>Respeitar os idiomas e leis de todos os países do mundo, com atividades transparentes e justas que demonstrem suas boas ações;</li>
-            <li>Respeitar a cultura e costumes de todos os países e contribuir para o desenvolvimento econômico e social por meio de atividades empresariais em cada comunidade;</li>
-            <li>Dedicar todos os esforços para criar produtos que mantenham a harmonia com o meio ambiente, para conseguir melhorar a qualidade de vida em todas as regiões em que a Toyota está presente;</li>
-            <li>Criar e desenvolver tecnologias de ponta e oferecer excelentes produtos e serviços que satisfaçam as necessidades dos clientes de todo o mundo;</li>
-            <li>Estimular uma cultura empresarial que promova a criatividade individual e o valor do trabalho em equipe, gerando ao mesmo tempo a confiança mútua e respeito entre os trabalhadores de nível operário e de direção;</li>
+            <li>Respeitar os idiomas e leis de todos os países do mundo, com atividades transparentes e justas que
+                demonstrem suas boas ações;</li>
+            <li>Respeitar a cultura e costumes de todos os países e contribuir para o desenvolvimento econômico e social
+                por meio de atividades empresariais em cada comunidade;</li>
+            <li>Dedicar todos os esforços para criar produtos que mantenham a harmonia com o meio ambiente, para
+                conseguir melhorar a qualidade de vida em todas as regiões em que a Toyota está presente;</li>
+            <li>Criar e desenvolver tecnologias de ponta e oferecer excelentes produtos e serviços que satisfaçam as
+                necessidades dos clientes de todo o mundo;</li>
+            <li>Estimular uma cultura empresarial que promova a criatividade individual e o valor do trabalho em equipe,
+                gerando ao mesmo tempo a confiança mútua e respeito entre os trabalhadores de nível operário e de
+                direção;</li>
             <li>Incentivar o crescimento em harmonia com a comunidade global por meio de um gerenciamento inovador;</li>
-            <li>Colaborar com outras empresas visando conseguir um crescimento estável a longo prazo com benefícios mútuos.</li>
+            <li>Colaborar com outras empresas visando conseguir um crescimento estável a longo prazo com benefícios
+                mútuos.</li>
         </ul>
     </main>
 
     <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js" type="module"></script>
 </body>
 
 </html>

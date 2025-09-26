@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/logo-toyota.svg" type="image/x-icon">
 
     <title>Eletrificação</title>
 </head>
 
-<body>
+<body id="body-main">
     <header>
-        <nav class="navbar navbar-dark fixed-top">
+        <nav class="navbar navbar-dark fixed-top navbar-main">
             <div class="container-fluid">
                 <img id="logo" src="img/toyota-logo-red.png" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -55,14 +56,145 @@
                         </ul>
                     </div>
                 </div>
+
+                <i class="bi bi-person-add" id="add_user"></i>
+                <i class="bi bi-person-circle" id="profile_icon"></i>
             </div>
+
         </nav>
     </header>
 
     <main>
+
+        <!-- Se estiver logado -->
+        <div class="profile" id="profile">
+            <div class="dropdown" id="dropdownMenu">
+                <a href="perfil.html" target="_blank"><i class="bi bi-person-lines-fill"></i> Meu Perfil</a>
+                <a href="#" id="logout"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            </div>
+        </div>
+
+        <!--CADASTRO-->
+        <div id="cadastro">
+            <div id="form_cadastro">
+                <i class="bi bi-x-circle"></i>
+
+                <p class="title">Cadastro</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" required class="inp-cadastrar" id="nome" placeholder="">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email_cadastro">E-mail</label>
+                        <input type="email" name="email" required class="inp-cadastrar" id="email_cadastro"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+
+                        <label for="cadastro_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-cadastrar senha" id="cadastro_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" id="bi_eye" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <div class="input-group senha-group">
+
+                        <label for="confirm_senha">Confirmar senha</label>
+                        <input type="password" name="confirm_senha" required class="inp-cadastrar senha"
+                            id="confirm_senha" placeholder="">
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                    <button class="cadastrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--LOGIN-->
+        <div id="login">
+            <div id="form_login">
+                <i class="bi bi-x-circle"></i>
+                <p class="title">Login</p>
+                <form class="form needs-validation" novalidate>
+                    <div class="input-group">
+                        <label for="email_login">E-mail</label>
+                        <input type="email" name="email" required class="inp-login" id="email_login"
+                            placeholder="teste@gmail.com">
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="input-group senha-group">
+                        <label for="inp_senha">Senha</label>
+                        <input type="password" name="senha" required class="inp-login senha" id="inp_senha"
+                            placeholder="">
+                        <i class="bi bi-eye toggleSenha" style="cursor:pointer"></i>
+
+                        <div class="valid-feedback">
+                            Correto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Campo obrigatório.
+                        </div>
+
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Esqueci minha senha ?</a>
+                        </div>
+                    </div>
+                    <button class="entrar">Entrar</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                </div>
+                <p class="signup">Não tem uma conta?
+                    <a rel="noopener noreferrer" href="#" class="login_cadastrar">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="poster-login">
+            <div id="poster">
+                <h1>Que bom que você voltou!</h1>
+                <p>Entre ou cadastre-se para obter experiências incriveis.</p>
+                <button type="submit" id="poster_entrar">Entrar</button>
+                <button type="submit" id="poster_cadastrar">Cadastre-se gratuitamente</button>
+                <button id="poster_desconectar">Permanecer desconectado</button>
+            </div>
+        </div>
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-eletrificacao" id="btn-inicio"><a href="#inicio">Inicio</a></button>
-            <button type="button" class="btn btn-eletrificacao" id="btn-funcionamento"><a href="#funcionamento">Como funciona</a></button>
+            <button type="button" class="btn btn-eletrificacao" id="btn-funcionamento"><a href="#funcionamento">Como
+                    funciona</a></button>
         </div>
 
         <div id="inicio">
@@ -135,6 +267,7 @@
 
     <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/eletrificacao.js"></script>
+    <script src="js/login.js" type="module"></script>
 </body>
 
 </html>
