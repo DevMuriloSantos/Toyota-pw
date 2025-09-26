@@ -233,6 +233,7 @@ logout.addEventListener('click', () => {
                         updateProfile(user, { displayName: nome_cadastro })
                             .then(() => {
                                 alert('Cadastro realizado com sucesso!');
+                                permanecer_deconectado = true
                                 // Limpar campos, fechar modal etc.
                             })
                             .catch((error) => {
