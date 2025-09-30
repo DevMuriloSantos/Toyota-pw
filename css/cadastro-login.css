@@ -205,3 +205,10 @@
 .dropdown a:hover {
     background: rgb(204, 219, 238);
 }
+
+@media screen and (min-width: 768px) {
+    .profile {
+        width: 20%;
+        left: 76%;
+    }
+}

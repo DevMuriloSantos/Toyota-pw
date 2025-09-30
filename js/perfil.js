@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, updateEmail, signOut } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+import { getAuth, updateProfile, onAuthStateChanged, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBsCCDXpy23SCrCxhevYJw68dnemI79t5g",
@@ -13,35 +12,61 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics();
-const auth = getAuth();
-const user = auth.currentUser;
+const auth = getAuth(app);
+
+const img_avatar = document.querySelectorAll('.img_avatar')
+let url_avatar;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         document.getElementById('nome_edit').value = user.displayName || '';
         document.getElementById('email_edit').value = user.email || '';
+        document.getElementById('avatarPreview').src = user.photoURL || '';
+        const avatar = document.getElementById('avatar');
+        console.log(user)
 
-        // Listener do botão fora do submit!
         document.getElementById('btn_alteracoes').addEventListener('click', async (event) => {
             event.preventDefault();
 
             const nome_edit = document.getElementById('nome_edit').value;
-            const email_edit = document.getElementById('email_edit').value;
+            const senha_atual = prompt("Digite sua senha atual para confirmar as alterações:");
+
+            if (!senha_atual) {
+                alert("A senha é obrigatória para atualizar o e-mail.");
+                return;
+            }
+
+            // Reautenticação
+            const credential = EmailAuthProvider.credential(user.email, senha_atual);
 
             try {
-                await updateProfile(user, { displayName: nome_edit });
+                await reauthenticateWithCredential(user, credential);
 
-                if (user.email !== email_edit) {
-                    await updateEmail(user, email_edit);
-                }
+                // Atualiza nome
+                await updateProfile(user, { displayName: nome_edit, photoURL: url_avatar });
+
                 alert('Perfil atualizado com sucesso!');
-
             } catch (error) {
                 alert('Erro ao atualizar perfil: ' + error.message);
             }
         });
+
+        document.getElementById('avatarPreview').addEventListener('click', () => {
+            avatar.style.display = 'flex'
+        })
+
+        document.getElementsByClassName('bi-x-circle')[0].addEventListener('click', () => {
+            avatar.style.display = 'none'
+        })
     }
+});
+
+img_avatar.forEach(img_avatar => {
+    img_avatar.addEventListener('click', () => {
+        document.getElementById('avatarPreview').src = img_avatar.src;
+        url_avatar = img_avatar.src
+        avatar.style.display = 'none'
+    })
 });
 
 (() => {

@@ -102,12 +102,20 @@ main>h1 h2 {
     z-index: 1030 !important;
 }
 
-.bi-person-add, .bi-person-circle {
+.bi-person-add,
+.bi-person-circle {
     font-size: 2rem;
     color: #EB0A1E;
 }
 
-#profile_icon {
+#icon_avatar {
+    border: 2px solid #EB0A1E;
+    border-radius: 50%;
+    width: 10%;
+}
+
+#profile_icon_id,
+#icon_avatar {
     display: none;
 }
 
@@ -412,7 +420,12 @@ ul {
         height: 550px;
     }
 
-    #form_login, #form_cadastro {
+    #form_login,
+    #form_cadastro {
         width: 58% !important;
+    }
+
+    #icon_avatar {
+        width: 4%;
     }
 }

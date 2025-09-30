@@ -16,14 +16,24 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics();
 const auth = getAuth();
 
+const icon_avatar = document.getElementById('icon_avatar')
+
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         // Usuário está logado
-        add_user.style.display = 'none';
-        profile_icon.style.display = 'block';
+        if (user.photoURL != '') {
+            icon_avatar.style.display = 'block';
+            icon_avatar.src = user.photoURL;
+            profile_icon_id.style.display = 'none';
+            add_user.style.display = 'none';
+        } else {
+            add_user.style.display = 'none';
+            profile_icon_id.style.display = 'block';
+        }
+
     } else {
-        // Usuário não está logado
+        // Usuario não está logado
         add_user.style.display = 'block';
         profile_icon.style.display = 'none';
     }
@@ -42,7 +52,8 @@ let permanecer_deconectado = false
 
 // login e cadastro
 const add_user = document.getElementById('add_user');
-const profile_icon = document.getElementById('profile_icon');
+const profile_icon = document.querySelectorAll('.profile_icon');
+const profile_icon_id = document.getElementById('profile_icon_id');
 const profile = document.getElementById('profile');
 const dropdownMenu = document.getElementById("dropdownMenu");
 const login = document.getElementById('login');
@@ -115,8 +126,10 @@ add_user.addEventListener('click', () => {
     });
 });
 
-profile_icon.addEventListener('click', () => {
-    profile.style.display = 'block';
+profile_icon.forEach(profile_icon => {
+    profile_icon.addEventListener('click', () => {
+        profile.style.display = 'block';
+    })
 })
 
 document.addEventListener('mousedown', function (event) {
