@@ -13,15 +13,22 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics();
-const auth = getAuth();
+const auth = getAuth(app);
 
 const icon_avatar = document.getElementById('icon_avatar')
-
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         // Usuário está logado
+        if (localStorage.length == 0) {
+            permanecer_deconectado = false
+            localStorage.setItem('Desconectado', permanecer_deconectado)
+
+            poster_login.style.display = 'none';
+            body_main.style.overflowY = 'scroll'
+            navbar_main.classList.add('zIndex')
+        }
+
         if (user.photoURL != '') {
             icon_avatar.style.display = 'block';
             icon_avatar.src = user.photoURL;
@@ -35,10 +42,9 @@ onAuthStateChanged(auth, (user) => {
     } else {
         // Usuario não está logado
         add_user.style.display = 'block';
-        profile_icon.style.display = 'none';
+        profile_icon_id.style.display = 'none';
     }
 });
-
 
 // poster login
 const body_main = document.getElementById('body-main');
@@ -68,7 +74,7 @@ const btn_close_cadastrar = document.getElementsByClassName('bi-x-circle')[0];
 
 for (let i = 0; i < localStorage.length; i++) {
 
-    if (localStorage.key(i) === 'Login') {
+    if (localStorage.key(i) === 'Desconectado') {
         permanecer_deconectado = localStorage.getItem(localStorage.key(i))
 
         if (permanecer_deconectado == 'false' || permanecer_deconectado == 'true') {
@@ -96,7 +102,7 @@ poster_cadastrar.addEventListener('click', () => {
 
 poster_desconectar.addEventListener('click', () => {
     permanecer_deconectado = true
-    localStorage.setItem('Login', permanecer_deconectado)
+    localStorage.setItem('Desconectado', permanecer_deconectado)
 
     body_main.style.overflowY = 'scroll'
     poster_login.style.display = 'none';
@@ -178,9 +184,16 @@ logout.addEventListener('click', () => {
         .then(() => {
             alert('Aguarde um momento até que você seja desconectado...');
             // Atualize a interface, se necessário
-            add_user.style.display = 'block';
-            profile_icon.style.display = 'none';
-            // Outras ações, como fechar modais, etc.
+
+            if (auth) {
+                icon_avatar.style.display = 'none';
+                profile.style.display = 'none';
+                add_user.style.display = 'block';
+            } else {
+                add_user.style.display = 'block';
+                profile_icon_id.style.display = 'none';
+                profile.style.display = 'none';
+            }
         })
         .catch((error) => {
             alert('Erro ao sair: ' + error.message);
@@ -214,10 +227,15 @@ logout.addEventListener('click', () => {
 
                 // tudo abaixo é uma promise
                 signInWithEmailAndPassword(auth, email_login, senha_login).then((userCredential) => {
+                    if (localStorage.length == 0) {
+                        permanecer_deconectado = false
+
+                        localStorage.setItem('Desconectado', permanecer_deconectado)
+                    }
+
                     const user = userCredential.user;
                     alert('Login realizado com sucesso!')
                     console.log('success', userCredential)
-                    console.log(user)
 
                     document.querySelectorAll('.inp-login').forEach(input => {
                         input.value = '';
@@ -226,9 +244,14 @@ logout.addEventListener('click', () => {
                     nav.classList.add('zIndex');
                     login.style.display = 'none';
 
-                    add_user.style.display = 'none';
-                    profile_icon.style.display = 'block';
-
+                    if (user.photoURL != '') {
+                        icon_avatar.style.display = 'block';
+                        icon_avatar.src = user.photoURL;
+                        profile_icon_id.style.display = 'none';
+                    } else {
+                        add_user.style.display = 'none';
+                        profile_icon_id.style.display = 'block';
+                    }
                 }).catch(error => {
                     const errorMessage = error.message;
                     alert(errorMessage)
@@ -236,6 +259,7 @@ logout.addEventListener('click', () => {
             });
 
             btn_cadastrar.addEventListener('click', () => {
+
                 const nome_cadastro = document.getElementById('nome').value;
                 const email_cadastro = document.getElementById('email_cadastro').value;
                 const confirm_senha_cadastro = document.getElementById('confirm_senha').value;
@@ -246,7 +270,11 @@ logout.addEventListener('click', () => {
                         updateProfile(user, { displayName: nome_cadastro })
                             .then(() => {
                                 alert('Cadastro realizado com sucesso!');
-                                permanecer_deconectado = true
+                                if (localStorage.length == 0) {
+                                    permanecer_deconectado = false
+
+                                    localStorage.setItem('Desconectado', permanecer_deconectado)
+                                }
                                 // Limpar campos, fechar modal etc.
                             })
                             .catch((error) => {
