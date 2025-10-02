@@ -1,11 +1,8 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
 
-    // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
@@ -18,11 +15,16 @@
             form.classList.add('was-validated')
             event.preventDefault()
 
-            const data = document.getElementById('validationCustom04');
-            const valorData = data.value;
-            console.log(valorData);
+            const nome = document.getElementById('validationCustom01').value
+            const email = document.getElementById('validationCustom02').value
+            const telefone = document.getElementById('validationCustom03').value
+            const data = document.getElementById('validationCustom04').value
+            const periodo = document.getElementById('validationCustom05').value
+
+            localStorage.setItem('User_agendamento', JSON.stringify({ nome, email, telefone, data, periodo })) // salva os dados no localStorage em formato JSON
+
             alert('Agendamento realizado com sucesso!')
-            //window.location.href = 'index.html'
-        }, false)
-    })
+            window.location.href = 'informativo.html'
+        })
+    }, false)
 })()
